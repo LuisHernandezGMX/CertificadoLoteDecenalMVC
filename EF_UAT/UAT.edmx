@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="UATModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="di_certificado_decenal">
+          <Key>
+            <PropertyRef Name="id_reg_cer" />
+            <PropertyRef Name="txt_certificado" />
+          </Key>
+          <Property Name="id_reg_cer" Type="int" Nullable="false" />
+          <Property Name="id_pv" Type="int" />
+          <Property Name="cod_suc" Type="numeric" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="cod_ramo" Type="numeric" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="nro_pol" Type="numeric" Precision="9" Scale="0" Nullable="false" />
+          <Property Name="txt_nro_pol" Type="varchar" MaxLength="120" Nullable="false" />
+          <Property Name="cod_item" Type="int" Nullable="false" />
+          <Property Name="txt_certificado" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="fec_ini" Type="smalldatetime" />
+          <Property Name="fec_fin_seg" Type="smalldatetime" />
+          <Property Name="fec_fin_tres" Type="smalldatetime" />
+          <Property Name="fec_fin_cinco" Type="smalldatetime" />
+          <Property Name="fec_fin_diez" Type="smalldatetime" />
+          <Property Name="imp_suma_asegurada" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="imp_admon_riesgos" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="imp_prima_neto_end" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="imp_prima_neta_real" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="imp_prima_hab" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="imp_prima_seg" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="imp_prima_3" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="imp_prima_4" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="imp_millar" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="txt_nombre" Type="varchar" MaxLength="120" />
+          <Property Name="txt_RFC" Type="varchar" MaxLength="18" />
+          <Property Name="txt_NSS" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="txt_desarrollo" Type="varchar" MaxLength="120" />
+          <Property Name="nro_credito" Type="numeric" Precision="12" Scale="0" />
+          <Property Name="cod_CUV" Type="varchar" MaxLength="16" />
+          <Property Name="txt_condominio" Type="varchar" MaxLength="120" />
+          <Property Name="txt_calle" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="nro_exterior" Type="varchar" MaxLength="20" />
+          <Property Name="nro_interior" Type="varchar" MaxLength="20" />
+          <Property Name="txt_mz" Type="varchar" MaxLength="20" />
+          <Property Name="txt_lt" Type="varchar" MaxLength="20" />
+          <Property Name="txt_super_mz" Type="varchar" MaxLength="20" />
+          <Property Name="txt_edif" Type="varchar" MaxLength="20" />
+          <Property Name="txt_nivel" Type="varchar" MaxLength="4" />
+          <Property Name="cod_postal" Type="varchar" MaxLength="10" />
+          <Property Name="cod_colonia" Type="varchar" MaxLength="120" />
+          <Property Name="cod_municipio" Type="varchar" MaxLength="120" />
+          <Property Name="cod_entidad" Type="varchar" MaxLength="120" />
+          <Property Name="txt_nom_constructor" Type="varchar" MaxLength="120" />
+          <Property Name="fec_ini_garantia" Type="smalldatetime" />
+          <Property Name="fec_fin_obra" Type="smalldatetime" />
+          <Property Name="fec_adquisicion" Type="smalldatetime" />
+          <Property Name="txt_nom_notario" Type="varchar" MaxLength="120" />
+          <Property Name="nro_escritura" Type="numeric" Precision="12" Scale="0" />
+          <Property Name="fecha" Type="smalldatetime" />
+          <Property Name="nro_notaria" Type="numeric" Precision="10" Scale="0" />
+        </EntityType>
+        <EntityType Name="di_certificado_lote_decenal">
+          <Key>
+            <PropertyRef Name="id_reg_cer" />
+            <PropertyRef Name="nro_lote" />
+          </Key>
+          <Property Name="id_reg_cer" Type="int" Nullable="false" />
+          <Property Name="nro_lote" Type="int" Nullable="false" />
+          <Property Name="txt_certificado" Type="varchar" MaxLength="15" />
+          <Property Name="txt_usuario_alta" Type="varchar" MaxLength="120" Nullable="false" />
+          <Property Name="fec_alta" Type="smalldatetime" Nullable="false" />
+          <Property Name="txt_usuario_baja" Type="varchar" MaxLength="120" />
+          <Property Name="fec_baja" Type="smalldatetime" />
+          <Property Name="txt_status_cer" Type="varchar" MaxLength="120" Nullable="false" />
+        </EntityType>
+        <Function Name="spiu_tvarias_ult_nro" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="sn_muestra" Type="numeric" Mode="In" />
+          <Parameter Name="nom_tabla" Type="varchar" Mode="In" />
+          <Parameter Name="ult_nro" Type="int" Mode="InOut" />
+        </Function>
+        <EntityContainer Name="UATModelStoreContainer">
+          <EntitySet Name="di_certificado_decenal" EntityType="Self.di_certificado_decenal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="di_certificado_lote_decenal" EntityType="Self.di_certificado_lote_decenal" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="UATModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="di_certificado_decenal">
+          <Key>
+            <PropertyRef Name="id_reg_cer" />
+            <PropertyRef Name="txt_certificado" />
+          </Key>
+          <Property Name="id_reg_cer" Type="Int32" Nullable="false" />
+          <Property Name="id_pv" Type="Int32" />
+          <Property Name="cod_suc" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="cod_ramo" Type="Decimal" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="nro_pol" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+          <Property Name="txt_nro_pol" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cod_item" Type="Int32" Nullable="false" />
+          <Property Name="txt_certificado" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fec_ini" Type="DateTime" Precision="0" />
+          <Property Name="fec_fin_seg" Type="DateTime" Precision="0" />
+          <Property Name="fec_fin_tres" Type="DateTime" Precision="0" />
+          <Property Name="fec_fin_cinco" Type="DateTime" Precision="0" />
+          <Property Name="fec_fin_diez" Type="DateTime" Precision="0" />
+          <Property Name="imp_suma_asegurada" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="imp_admon_riesgos" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="imp_prima_neto_end" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="imp_prima_neta_real" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="imp_prima_hab" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="imp_prima_seg" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="imp_prima_3" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="imp_prima_4" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="imp_millar" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="txt_nombre" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="txt_RFC" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+          <Property Name="txt_NSS" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="txt_desarrollo" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="nro_credito" Type="Decimal" Precision="12" Scale="0" />
+          <Property Name="cod_CUV" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="txt_condominio" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="txt_calle" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nro_exterior" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="nro_interior" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="txt_mz" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="txt_lt" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="txt_super_mz" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="txt_edif" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="txt_nivel" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="cod_postal" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="cod_colonia" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="cod_municipio" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="cod_entidad" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="txt_nom_constructor" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="fec_ini_garantia" Type="DateTime" Precision="0" />
+          <Property Name="fec_fin_obra" Type="DateTime" Precision="0" />
+          <Property Name="fec_adquisicion" Type="DateTime" Precision="0" />
+          <Property Name="txt_nom_notario" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="nro_escritura" Type="Decimal" Precision="12" Scale="0" />
+          <Property Name="fecha" Type="DateTime" Precision="0" />
+          <Property Name="nro_notaria" Type="Decimal" Precision="10" Scale="0" />
+        </EntityType>
+        <EntityType Name="di_certificado_lote_decenal">
+          <Key>
+            <PropertyRef Name="id_reg_cer" />
+            <PropertyRef Name="nro_lote" />
+          </Key>
+          <Property Name="id_reg_cer" Type="Int32" Nullable="false" />
+          <Property Name="nro_lote" Type="Int32" Nullable="false" />
+          <Property Name="txt_certificado" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="txt_usuario_alta" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fec_alta" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="txt_usuario_baja" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="fec_baja" Type="DateTime" Precision="0" />
+          <Property Name="txt_status_cer" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="UATEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="di_certificado_decenal" EntityType="Self.di_certificado_decenal" />
+          <EntitySet Name="di_certificado_lote_decenal" EntityType="Self.di_certificado_lote_decenal" />
+          <FunctionImport Name="spiu_tvarias_ult_nro">
+            <Parameter Name="sn_muestra" Mode="In" Type="Decimal" />
+            <Parameter Name="nom_tabla" Mode="In" Type="String" />
+            <Parameter Name="ult_nro" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="UATModelStoreContainer" CdmEntityContainer="UATEntities">
+          <EntitySetMapping Name="di_certificado_decenal">
+            <EntityTypeMapping TypeName="UATModel.di_certificado_decenal">
+              <MappingFragment StoreEntitySet="di_certificado_decenal">
+                <ScalarProperty Name="id_reg_cer" ColumnName="id_reg_cer" />
+                <ScalarProperty Name="id_pv" ColumnName="id_pv" />
+                <ScalarProperty Name="cod_suc" ColumnName="cod_suc" />
+                <ScalarProperty Name="cod_ramo" ColumnName="cod_ramo" />
+                <ScalarProperty Name="nro_pol" ColumnName="nro_pol" />
+                <ScalarProperty Name="txt_nro_pol" ColumnName="txt_nro_pol" />
+                <ScalarProperty Name="cod_item" ColumnName="cod_item" />
+                <ScalarProperty Name="txt_certificado" ColumnName="txt_certificado" />
+                <ScalarProperty Name="fec_ini" ColumnName="fec_ini" />
+                <ScalarProperty Name="fec_fin_seg" ColumnName="fec_fin_seg" />
+                <ScalarProperty Name="fec_fin_tres" ColumnName="fec_fin_tres" />
+                <ScalarProperty Name="fec_fin_cinco" ColumnName="fec_fin_cinco" />
+                <ScalarProperty Name="fec_fin_diez" ColumnName="fec_fin_diez" />
+                <ScalarProperty Name="imp_suma_asegurada" ColumnName="imp_suma_asegurada" />
+                <ScalarProperty Name="imp_admon_riesgos" ColumnName="imp_admon_riesgos" />
+                <ScalarProperty Name="imp_prima_neto_end" ColumnName="imp_prima_neto_end" />
+                <ScalarProperty Name="imp_prima_neta_real" ColumnName="imp_prima_neta_real" />
+                <ScalarProperty Name="imp_prima_hab" ColumnName="imp_prima_hab" />
+                <ScalarProperty Name="imp_prima_seg" ColumnName="imp_prima_seg" />
+                <ScalarProperty Name="imp_prima_3" ColumnName="imp_prima_3" />
+                <ScalarProperty Name="imp_prima_4" ColumnName="imp_prima_4" />
+                <ScalarProperty Name="imp_millar" ColumnName="imp_millar" />
+                <ScalarProperty Name="txt_nombre" ColumnName="txt_nombre" />
+                <ScalarProperty Name="txt_RFC" ColumnName="txt_RFC" />
+                <ScalarProperty Name="txt_NSS" ColumnName="txt_NSS" />
+                <ScalarProperty Name="txt_desarrollo" ColumnName="txt_desarrollo" />
+                <ScalarProperty Name="nro_credito" ColumnName="nro_credito" />
+                <ScalarProperty Name="cod_CUV" ColumnName="cod_CUV" />
+                <ScalarProperty Name="txt_condominio" ColumnName="txt_condominio" />
+                <ScalarProperty Name="txt_calle" ColumnName="txt_calle" />
+                <ScalarProperty Name="nro_exterior" ColumnName="nro_exterior" />
+                <ScalarProperty Name="nro_interior" ColumnName="nro_interior" />
+                <ScalarProperty Name="txt_mz" ColumnName="txt_mz" />
+                <ScalarProperty Name="txt_lt" ColumnName="txt_lt" />
+                <ScalarProperty Name="txt_super_mz" ColumnName="txt_super_mz" />
+                <ScalarProperty Name="txt_edif" ColumnName="txt_edif" />
+                <ScalarProperty Name="txt_nivel" ColumnName="txt_nivel" />
+                <ScalarProperty Name="cod_postal" ColumnName="cod_postal" />
+                <ScalarProperty Name="cod_colonia" ColumnName="cod_colonia" />
+                <ScalarProperty Name="cod_municipio" ColumnName="cod_municipio" />
+                <ScalarProperty Name="cod_entidad" ColumnName="cod_entidad" />
+                <ScalarProperty Name="txt_nom_constructor" ColumnName="txt_nom_constructor" />
+                <ScalarProperty Name="fec_ini_garantia" ColumnName="fec_ini_garantia" />
+                <ScalarProperty Name="fec_fin_obra" ColumnName="fec_fin_obra" />
+                <ScalarProperty Name="fec_adquisicion" ColumnName="fec_adquisicion" />
+                <ScalarProperty Name="txt_nom_notario" ColumnName="txt_nom_notario" />
+                <ScalarProperty Name="nro_escritura" ColumnName="nro_escritura" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="nro_notaria" ColumnName="nro_notaria" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="di_certificado_lote_decenal">
+            <EntityTypeMapping TypeName="UATModel.di_certificado_lote_decenal">
+              <MappingFragment StoreEntitySet="di_certificado_lote_decenal">
+                <ScalarProperty Name="id_reg_cer" ColumnName="id_reg_cer" />
+                <ScalarProperty Name="nro_lote" ColumnName="nro_lote" />
+                <ScalarProperty Name="txt_certificado" ColumnName="txt_certificado" />
+                <ScalarProperty Name="txt_usuario_alta" ColumnName="txt_usuario_alta" />
+                <ScalarProperty Name="fec_alta" ColumnName="fec_alta" />
+                <ScalarProperty Name="txt_usuario_baja" ColumnName="txt_usuario_baja" />
+                <ScalarProperty Name="fec_baja" ColumnName="fec_baja" />
+                <ScalarProperty Name="txt_status_cer" ColumnName="txt_status_cer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spiu_tvarias_ult_nro" FunctionName="UATModel.Store.spiu_tvarias_ult_nro" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

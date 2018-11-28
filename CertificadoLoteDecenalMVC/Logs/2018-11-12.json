@@ -1,0 +1,112 @@
+{
+  "Logs": [
+    {
+      "Id": "95e8a176-12a2-43f3-9adc-eb18d2cff575",
+      "Fecha": "2018-11-12T16:53:30.8854817-06:00",
+      "Descripcion": "Archivo de certificados Excel leído con éxito.",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerArchivo",
+          "Argumentos": [
+            {
+              "Parametro": "archivo",
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Valor": "System.Web.HttpPostedFileWrapper"
+            },
+            {
+              "Parametro": "tempDir",
+              "TipoDato": "System.String",
+              "Valor": "c:\\users\\hernandl\\documents\\visual studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Tipo": 1,
+        "Mensaje": "Ejecución realizada con éxito."
+      }
+    },
+    {
+      "Id": "e7b132b1-9010-46f9-94eb-ead176d62a7f",
+      "Fecha": "2018-11-12T17:12:33.9445371-06:00",
+      "Descripcion": "Archivo de certificados Excel leído con éxito.",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerArchivo",
+          "Argumentos": [
+            {
+              "Parametro": "archivo",
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Valor": "System.Web.HttpPostedFileWrapper"
+            },
+            {
+              "Parametro": "tempDir",
+              "TipoDato": "System.String",
+              "Valor": "c:\\users\\hernandl\\documents\\visual studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Tipo": 1,
+        "Mensaje": "Ejecución realizada con éxito."
+      }
+    },
+    {
+      "Id": "b248f044-d617-4ea6-ac81-520ad23958b0",
+      "Fecha": "2018-11-12T17:13:19.9549153-06:00",
+      "Descripcion": "Error en lectura de archivo de certificados Excel",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerArchivo",
+          "Argumentos": [
+            {
+              "Parametro": "archivo",
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Valor": "System.Web.HttpPostedFileWrapper"
+            },
+            {
+              "Parametro": "tempDir",
+              "TipoDato": "System.String",
+              "Valor": "c:\\users\\hernandl\\documents\\visual studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Tipo": 3,
+        "Mensaje": "System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.\r\n   en CertificadoLoteDecenalMVC.Models.Business.Excel.EPPlusReaderWriter.ParseFila(Object[,] fila) en C:\\Users\\hernandl\\documents\\visual studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Excel\\EPPlusReaderWriter.cs:línea 107\r\n   en CertificadoLoteDecenalMVC.Models.Business.Excel.EPPlusReaderWriter.LeerArchivo() en C:\\Users\\hernandl\\documents\\visual studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Excel\\EPPlusReaderWriter.cs:línea 49\r\n   en CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService.LeerArchivo(HttpPostedFileBase archivo, String tempDir) en C:\\Users\\hernandl\\documents\\visual studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Services\\HomeService.cs:línea 136\r\n   en CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService.LeerArchivo(HttpPostedFileBase archivo, String tempDir, Message& resultado) en C:\\Users\\hernandl\\documents\\visual studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Services\\HomeService.cs:línea 60"
+      }
+    },
+    {
+      "Id": "fe1d088b-1776-4aed-889c-b7e87cb00e39",
+      "Fecha": "2018-11-12T17:13:50.6221405-06:00",
+      "Descripcion": "Archivo de certificados Excel no validado.",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerArchivo",
+          "Argumentos": [
+            {
+              "Parametro": "archivo",
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Valor": "System.Web.HttpPostedFileWrapper"
+            },
+            {
+              "Parametro": "tempDir",
+              "TipoDato": "System.String",
+              "Valor": "c:\\users\\hernandl\\documents\\visual studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Tipo": 2,
+        "Mensaje": "Solo se aceptan archivos de Excel 2007 o superior."
+      }
+    }
+  ]
+}

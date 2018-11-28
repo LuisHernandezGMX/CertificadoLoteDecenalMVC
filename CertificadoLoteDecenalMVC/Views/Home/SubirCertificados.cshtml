@@ -1,0 +1,20 @@
+﻿@model CertificadoLoteDecenalMVC.Models.Business.Messages.MessageWithValue<string>
+@{
+    ViewBag.Title = "Lote Generado";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <h1>Lote Generado</h1>
+        <p>@Model.Mensaje</p>
+        <br>
+        <a href="@Url.Action("DescargarLote", "DescargarLotes", new { nombreArchivo = Model.Valor })" class="btn btn-danger">
+            <span class="fas fa-download"></span>
+            Descargar Lote
+        </a>
+        <a href="@Url.Action("LayoutCertificados", "Home")" class="btn btn-success">
+            <span class="fas fa-file-excel"></span>
+            Subir Otro Layout
+        </a>
+    </div>
+</div>

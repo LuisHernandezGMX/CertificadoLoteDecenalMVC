@@ -1,0 +1,245 @@
+﻿@using CertificadoLoteDecenalMVC.Models.Business.FileRecords
+@model IEnumerable<Certificado>
+@{
+    ViewBag.Title = "Layout Certificados";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <h1>
+            <span class="fas fa-file-excel"></span>
+            Layout Certificados
+        </h1>
+        <p>Seleccione el archivo de Excel a subir.</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        @using (Html.BeginForm("SubirCertificados", "Home", FormMethod.Post, new { id = "formSubir", @class = "form-inline", enctype = "multipart/form-data" })) {
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                <label>Seleccione su layout:</label>
+                <input type="file" id="layoutCertificados" name="layoutCertificados" accept=".xlsx" />
+            </div>
+            <button type="submit" class="btn btn-primary">
+                <span class="fas fa-upload"></span>
+                Subir Certificados
+            </button>
+        }
+        <br>
+    </div>
+    <div class="col-sm-6">
+        @using (Html.BeginForm("PrevisualizarCertificados", "Home", FormMethod.Post, new { id = "formPrevisualizar", enctype = "multipart/form-data" })) {
+            @Html.AntiForgeryToken()
+            <button type="submit" class="btn btn-success">
+                <span class="fas fa-file-excel"></span>
+                Previsualizar Certificados
+            </button>
+        }
+        <br>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        <div class="progress" style="display:none">
+            <div id="progressBar" class="progress-bar progress-bar-striped active" style="width:100%">
+                <span></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (IsPost) {
+    if (Model != null) {
+        <!-- Previsualización de Certificados -->
+        <div class="row">
+            <div class="col-sm-12">
+                <table id="tablePrevisualizacion" class="table table-bordered table-striped table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Póliza</th>
+                            <th>Ubc</th>
+                            <th>No. Certificado</th>
+                            <th>FecIni</th>
+                            <th>FecFinDos</th>
+                            <th>FecFinTres</th>
+                            <th>FecFinCinco</th>
+                            <th>FecFinDiez</th>
+                            <th>Avalúo</th>
+                            <th>Anticipo</th>
+                            <th>Prima Neta Real</th>
+                            <th>Prima Neta Endo</th>
+                            <th>Prima 1 (Habitabilidad)</th>
+                            <th>Prima 2 (Seguridad)</th>
+                            <th>Prima 3 (Impermeabilización Cubiertas)</th>
+                            <th>Prima 4 (Impermeabilización Fachadas)</th>
+                            <th>Cuota al Millar</th>
+                            <th>Nombre del Acreditado</th>
+                            <th>RFC</th>
+                            <th>NSS</th>
+                            <th>Desarrollo</th>
+                            <th>No. Crédito</th>
+                            <th>CUV</th>
+                            <th>Condominio</th>
+                            <th>Calle</th>
+                            <th>No. Exterior</th>
+                            <th>No. Interior</th>
+                            <th>Manzana</th>
+                            <th>Lote</th>
+                            <th>Supermanzana</th>
+                            <th>Edificio</th>
+                            <th>Nivel</th>
+                            <th>CP</th>
+                            <th>Colonia</th>
+                            <th>Municipio</th>
+                            <th>Entidad</th>
+                            <th>Desarrollador</th>
+                            <th>RFC Desarrollador</th>
+                            <th>Inicio de Garantía</th>
+                            <th>Fin de Obra</th>
+                            <th>Adquisición</th>
+                            <th>Nombre del Notario</th>
+                            <th>No. Escritura</th>
+                            <th>De Fecha</th>
+                            <th>No. Notario</th>
+                            <th>Entidad 2</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var registro in Model) {
+                            <tr>
+                                <td>@registro.Poliza</td>
+                                <td>@registro.Ubc</td>
+                                <td>@registro.NoCertificado</td>
+                                <td>@registro.FecIni</td>
+                                <td>@registro.FecFinDos</td>
+                                <td>@registro.FecFinTres</td>
+                                <td>@registro.FecFinCinco</td>
+                                <td>@registro.FecFinDiez</td>
+                                <td>$ @registro.Avaluo</td>
+                                <td>$ @registro.Anticipo</td>
+                                <td>$ @registro.PrimaNetaReal</td>
+                                <td>$ @registro.PrimaNetaEndo</td>
+                                <td>$ @registro.PrimaHabitabilidad</td>
+                                <td>$ @registro.PrimaSeguridad</td>
+                                <td>$ @registro.PrimaImpermeabilizacionCubiertas</td>
+                                <td>$ @registro.ImpermeabilizacionFachadas</td>
+                                <td>$ @registro.CuotaMillar</td>
+                                <td>@registro.NombreAcreditado</td>
+                                <td>@registro.RFC</td>
+                                <td>@registro.NSS</td>
+                                <td>@registro.Desarrollo</td>
+                                <td>@registro.NoCredito</td>
+                                <td>@registro.CUV</td>
+                                <td>@registro.Condominio</td>
+                                <td>@registro.Calle</td>
+                                <td>@registro.NoExterior</td>
+                                <td>@registro.NoInterior</td>
+                                <td>@registro.Manzana</td>
+                                <td>@registro.Lote</td>
+                                <td>@registro.SuperManzana</td>
+                                <td>@registro.Edificio</td>
+                                <td>@registro.Nivel</td>
+                                <td>@registro.CP</td>
+                                <td>@registro.Colonia</td>
+                                <td>@registro.Municipio</td>
+                                <td>@registro.Entidad</td>
+                                <td>@registro.Desarrollador</td>
+                                <td>@registro.RFCDesarrollador</td>
+                                <td>@registro.InicioGarantia</td>
+                                <td>@registro.FinObra</td>
+                                <td>@registro.Adquisicion</td>
+                                <td>@registro.NombreNotario</td>
+                                <td>@registro.NoEscritura</td>
+                                <td>@registro.DeFecha</td>
+                                <td>@registro.NoNotario</td>
+                                <td>@registro.Entidad2</td>
+                            </tr>
+                        }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Póliza</th>
+                            <th>Ubc</th>
+                            <th>No. Certificado</th>
+                            <th>FecIni</th>
+                            <th>FecFinDos</th>
+                            <th>FecFinTres</th>
+                            <th>FecFinCinco</th>
+                            <th>FecFinDiez</th>
+                            <th>Avalúo</th>
+                            <th>Anticipo</th>
+                            <th>Prima Neta Real</th>
+                            <th>Prima Neta Endo</th>
+                            <th>Prima 1 (Habitabilidad)</th>
+                            <th>Prima 2 (Seguridad)</th>
+                            <th>Prima 3 (Impermeabilización Cubiertas)</th>
+                            <th>Prima 4 (Impermeabilización Fachadas)</th>
+                            <th>Cuota al Millar</th>
+                            <th>Nombre del Acreditado</th>
+                            <th>RFC</th>
+                            <th>NSS</th>
+                            <th>Desarrollo</th>
+                            <th>No. Crédito</th>
+                            <th>CUV</th>
+                            <th>Condominio</th>
+                            <th>Calle</th>
+                            <th>No. Exterior</th>
+                            <th>No. Interior</th>
+                            <th>Manzana</th>
+                            <th>Lote</th>
+                            <th>Supermanzana</th>
+                            <th>Edificio</th>
+                            <th>Nivel</th>
+                            <th>CP</th>
+                            <th>Colonia</th>
+                            <th>Municipio</th>
+                            <th>Entidad</th>
+                            <th>Desarrollador</th>
+                            <th>RFC Desarrollador</th>
+                            <th>Inicio de Garantía</th>
+                            <th>Fin de Obra</th>
+                            <th>Adquisición</th>
+                            <th>Nombre del Notario</th>
+                            <th>No. Escritura</th>
+                            <th>De Fecha</th>
+                            <th>No. Notario</th>
+                            <th>Entidad 2</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+
+        @section Styles {
+            @Styles.Render("~/Content/DataTables")
+        }
+    } else {
+        <!-- Previsualizar Archivo o Subir Certificados fallaron -->
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="alert alert-danger alert-dismissable">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    @ViewBag.ResultadoProcesamiento.Mensaje
+                </div>
+            </div>
+        </div>
+    }
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/Home/LayoutCertificados")
+
+    @if (IsPost && Model != null) {
+        @Scripts.Render("~/bundles/DataTables")
+        <script>
+            // Previsualización de Certificados
+            $("#tablePrevisualizacion").DataTable({
+                scrollX: true,
+                language: {
+                    url: "@Url.Content("~/Scripts/datatables-spanish-i18n.json")"
+                }
+            });
+        </script>
+    }
+}

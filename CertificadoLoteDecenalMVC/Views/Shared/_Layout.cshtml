@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>@ViewBag.Title - Certificados Decenal</title>
+        @Styles.Render("~/Content/General")
+        <style>
+            table {
+                font-size: 8pt;
+            }
+
+            thead tr, tfoot tr {
+                background-color: #244676;
+                color: white;
+            }
+
+            th {
+                text-align: center;
+            }
+        </style>
+        @RenderSection("styles", false)
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="@Url.Action("Index", "Home")" class="navbar-brand">
+                        <span class="fas fa-certificate"></span>
+                        Certificados Decenal
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="@Url.Action("LayoutCertificados", "Home")">
+                                <span class="fas fa-file-excel"></span>
+                                Subir Archivo Layout
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index", "DescargarLotes")">
+                                <span class="fas fa-file-download"></span>
+                                Descargar Lotes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index", "Log")">
+                                <span class="fas fa-book"></span>
+                                Logs
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Grupo Mexicano de Seguros, S.A. de C.V.</p>
+            </footer>
+        </div>
+
+        @Scripts.Render("~/bundles/General")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

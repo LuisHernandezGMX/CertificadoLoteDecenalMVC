@@ -1,0 +1,316 @@
+{
+  "Logs": [
+    {
+      "Id": "73a1b74d-92bc-45bb-b134-19bf48d000a2",
+      "Fecha": "2018-11-15T10:21:30.7484617-06:00",
+      "Descripcion": "Archivo de certificados Excel leído con éxito.",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerArchivo",
+          "Argumentos": [
+            {
+              "Parametro": "archivo",
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Valor": "LayoutCertificadosInfonavitOCT2018.xlsx"
+            },
+            {
+              "Parametro": "tempDir",
+              "TipoDato": "System.String",
+              "Valor": "c:\\users\\hernandl\\documents\\visual studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Tipo": 1,
+        "Mensaje": "Ejecución realizada con éxito."
+      }
+    },
+    {
+      "Id": "8b13d0ee-6dfd-40ab-acba-c3620e0efae3",
+      "Fecha": "2018-11-15T10:21:59.5626763-06:00",
+      "Descripcion": "Certificados de Excel procesados con éxito",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerYProcesarRegistros",
+          "Argumentos": [
+            {
+              "Parametro": "archivo",
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Valor": "LayoutCertificadosInfonavitOCT2018.xlsx"
+            },
+            {
+              "Parametro": "tempDir",
+              "TipoDato": "System.String",
+              "Valor": "c:\\users\\hernandl\\documents\\visual studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            },
+            {
+              "Parametro": "lotesDir",
+              "TipoDato": "System.String",
+              "Valor": "c:\\users\\hernandl\\documents\\visual studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\LotesGenerados"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Tipo": 0,
+        "Mensaje": "Los certificados se procesaron con éxito y su respectivo lote ha sido generado. => LayoutCertificadosInfonavitOCT2018_LOTE_15-11-2018 10-21-59 a. m..xlsx"
+      }
+    },
+    {
+      "Id": "0a1404fd-19a9-4366-bf68-64c8bbbccf3e",
+      "Fecha": "2018-11-15T12:12:06.9863744-06:00",
+      "Descripcion": "Error en lectura de archivo de certificados Excel",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerArchivo",
+          "Argumentos": [
+            {
+              "Parametro": "archivo",
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Valor": "Layout Pruebas.xlsx"
+            },
+            {
+              "Parametro": "tempDir",
+              "TipoDato": "System.String",
+              "Valor": "c:\\users\\hernandl\\documents\\visual studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Tipo": 3,
+        "Mensaje": "System.InvalidCastException: La conversión especificada no es válida.\r\n   en CertificadoLoteDecenalMVC.Models.Business.Excel.EPPlusReaderWriter.ParseFila(Object[,] fila) en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Excel\\EPPlusReaderWriter.cs:línea 148\r\n   en CertificadoLoteDecenalMVC.Models.Business.Excel.EPPlusReaderWriter.LeerArchivo() en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Excel\\EPPlusReaderWriter.cs:línea 49\r\n   en CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService.LeerArchivo(HttpPostedFileBase archivo, String tempDir) en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Services\\HomeService.cs:línea 144\r\n   en CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService.LeerArchivo(HttpPostedFileBase archivo, String tempDir, Message& resultado) en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Services\\HomeService.cs:línea 60"
+      }
+    },
+    {
+      "Id": "730fc037-33e9-435c-a411-615cb3f54a5b",
+      "Fecha": "2018-11-15T12:14:28.7735795-06:00",
+      "Descripcion": "Error en lectura de archivo de certificados Excel",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerArchivo",
+          "Argumentos": [
+            {
+              "Parametro": "archivo",
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Valor": "Layout Pruebas.xlsx"
+            },
+            {
+              "Parametro": "tempDir",
+              "TipoDato": "System.String",
+              "Valor": "c:\\users\\hernandl\\documents\\visual studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Tipo": 3,
+        "Mensaje": "System.InvalidCastException: La conversión especificada no es válida.\r\n   en CertificadoLoteDecenalMVC.Models.Business.Excel.EPPlusReaderWriter.ParseFila(Object[,] fila) en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Excel\\EPPlusReaderWriter.cs:línea 148\r\n   en CertificadoLoteDecenalMVC.Models.Business.Excel.EPPlusReaderWriter.LeerArchivo() en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Excel\\EPPlusReaderWriter.cs:línea 49\r\n   en CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService.LeerArchivo(HttpPostedFileBase archivo, String tempDir) en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Services\\HomeService.cs:línea 144\r\n   en CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService.LeerArchivo(HttpPostedFileBase archivo, String tempDir, Message& resultado) en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Services\\HomeService.cs:línea 60"
+      }
+    },
+    {
+      "Id": "fd1fde3a-371d-4ec5-9011-d84f3b120212",
+      "Fecha": "2018-11-15T12:16:24.8237498-06:00",
+      "Descripcion": "Archivo de certificados Excel leído con éxito.",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerArchivo",
+          "Argumentos": [
+            {
+              "Parametro": "archivo",
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Valor": "Layout Pruebas.xlsx"
+            },
+            {
+              "Parametro": "tempDir",
+              "TipoDato": "System.String",
+              "Valor": "c:\\users\\hernandl\\documents\\visual studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Tipo": 1,
+        "Mensaje": "Ejecución realizada con éxito."
+      }
+    },
+    {
+      "Id": "af2f24b9-53e6-4814-a137-f1533b6a7b72",
+      "Fecha": "2018-11-15T12:19:16.8781471-06:00",
+      "Descripcion": "Archivo de certificados Excel leído con éxito.",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerArchivo",
+          "Argumentos": [
+            {
+              "Parametro": "archivo",
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Valor": "Layout Pruebas.xlsx"
+            },
+            {
+              "Parametro": "tempDir",
+              "TipoDato": "System.String",
+              "Valor": "c:\\users\\hernandl\\documents\\visual studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Tipo": 1,
+        "Mensaje": "Ejecución realizada con éxito."
+      }
+    },
+    {
+      "Id": "21322177-6a45-4089-9cf6-80de91d049f9",
+      "Fecha": "2018-11-15T12:19:25.3519093-06:00",
+      "Descripcion": "Error al procesar el archivo de certificados Excel",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerYProcesarRegistros",
+          "Argumentos": [
+            {
+              "Parametro": "archivo",
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Valor": "NULL"
+            },
+            {
+              "Parametro": "tempDir",
+              "TipoDato": "System.String",
+              "Valor": "c:\\users\\hernandl\\documents\\visual studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            },
+            {
+              "Parametro": "lotesDir",
+              "TipoDato": "System.String",
+              "Valor": "c:\\users\\hernandl\\documents\\visual studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\LotesGenerados"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Tipo": 3,
+        "Mensaje": "System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.\r\n   en CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService.LeerArchivo(HttpPostedFileBase archivo, String tempDir, Message& resultado)\r\n   en CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService.LeerYProcesarRegistros(HttpPostedFileBase archivo, String tempDir, String lotesDir)"
+      }
+    },
+    {
+      "Id": "3eb866b9-e885-4dc3-b6f1-979c72e7ad90",
+      "Fecha": "2018-11-15T12:22:23.8402106-06:00",
+      "Descripcion": "Archivo de certificados Excel no validado.",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerArchivo",
+          "Argumentos": [
+            {
+              "Parametro": "archivo",
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Valor": "NULL"
+            },
+            {
+              "Parametro": "tempDir",
+              "TipoDato": "System.String",
+              "Valor": "c:\\users\\hernandl\\documents\\visual studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Tipo": 2,
+        "Mensaje": "Por favor, seleccione un archivo."
+      }
+    },
+    {
+      "Id": "224b3c45-f949-49c1-b453-5069cfd37aeb",
+      "Fecha": "2018-11-15T12:22:27.5322752-06:00",
+      "Descripcion": "Archivo de certificados Excel no validado.",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerArchivo",
+          "Argumentos": [
+            {
+              "Parametro": "archivo",
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Valor": "NULL"
+            },
+            {
+              "Parametro": "tempDir",
+              "TipoDato": "System.String",
+              "Valor": "c:\\users\\hernandl\\documents\\visual studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Tipo": 2,
+        "Mensaje": "Por favor, seleccione un archivo."
+      }
+    },
+    {
+      "Id": "f0a8ae4e-d70f-4d63-896e-a7289b7d5967",
+      "Fecha": "2018-11-15T12:23:30.4490165-06:00",
+      "Descripcion": "Archivo de certificados Excel leído con éxito.",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerArchivo",
+          "Argumentos": [
+            {
+              "Parametro": "archivo",
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Valor": "Layout Pruebas.xlsx"
+            },
+            {
+              "Parametro": "tempDir",
+              "TipoDato": "System.String",
+              "Valor": "c:\\users\\hernandl\\documents\\visual studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Tipo": 1,
+        "Mensaje": "Ejecución realizada con éxito."
+      }
+    },
+    {
+      "Id": "f7224d77-c89d-4069-8de0-94ea46738987",
+      "Fecha": "2018-11-15T12:24:01.0698269-06:00",
+      "Descripcion": "Certificados de Excel procesados con éxito",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerYProcesarRegistros",
+          "Argumentos": [
+            {
+              "Parametro": "archivo",
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Valor": "Layout Pruebas.xlsx"
+            },
+            {
+              "Parametro": "tempDir",
+              "TipoDato": "System.String",
+              "Valor": "c:\\users\\hernandl\\documents\\visual studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            },
+            {
+              "Parametro": "lotesDir",
+              "TipoDato": "System.String",
+              "Valor": "c:\\users\\hernandl\\documents\\visual studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\LotesGenerados"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Tipo": 0,
+        "Mensaje": "Los certificados se procesaron con éxito y su respectivo lote ha sido generado. => Layout Pruebas_LOTE_15-11-2018 12-24-00 p. m..xlsx"
+      }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Principal";
+}
+
+<div class="jumbotron">
+    <h1>
+        <span class="fas fa-certificate"></span>
+        Certificados Decenal
+    </h1>
+</div>
+
+<div class="row">
+    <div class="col-sm-4">
+        <h2>Layout Certificados</h2>
+        <p>
+            Suba un archivo de Excel para generar los número de lote de los certificados.
+        </p>
+        <a href="@Url.Action("LayoutCertificados", "Home")" class="btn btn-success">
+            <span class="fas fa-file-excel"></span>
+            Subir Archivo Layout
+        </a>
+    </div>
+    <div class="col-sm-4">
+        <h2>Decargar Lotes</h2>
+        <p>Descargue los lotes de Decenal generados hasta el momento.</p>
+        <a href="@Url.Action("Index", "DescargarLotes")" class="btn btn-success">
+            <span class="fas fa-file-download"></span>
+            Descargar Lotes
+        </a>
+    </div>
+</div>

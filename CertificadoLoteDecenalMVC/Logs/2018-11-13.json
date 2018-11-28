@@ -1,0 +1,31 @@
+{
+  "Logs": [
+    {
+      "Id": "f71f0e13-e6cb-4b29-a646-cf2f482168c0",
+      "Fecha": "2018-11-13T10:57:23.0203878-06:00",
+      "Descripcion": "Archivo de certificados Excel no validado.",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerArchivo",
+          "Argumentos": [
+            {
+              "Parametro": "archivo",
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Valor": "6573.txt"
+            },
+            {
+              "Parametro": "tempDir",
+              "TipoDato": "System.String",
+              "Valor": "c:\\users\\hernandl\\documents\\visual studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Tipo": 2,
+        "Mensaje": "Solo se aceptan archivos de Excel 2007 o superior."
+      }
+    }
+  ]
+}

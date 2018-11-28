@@ -1,0 +1,31 @@
+{
+  "Logs": [
+    {
+      "Id": "aaf283bb-2a07-4760-a262-29e4586c4b8e",
+      "Fecha": "2018-11-14T11:10:06.187888-06:00",
+      "Descripcion": "Archivo de certificados Excel leído con éxito.",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerArchivo",
+          "Argumentos": [
+            {
+              "Parametro": "archivo",
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Valor": "LayoutCertificadosInfonavit.xlsx"
+            },
+            {
+              "Parametro": "tempDir",
+              "TipoDato": "System.String",
+              "Valor": "c:\\users\\hernandl\\documents\\visual studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Tipo": 1,
+        "Mensaje": "Ejecución realizada con éxito."
+      }
+    }
+  ]
+}

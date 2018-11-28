@@ -1,0 +1,66 @@
+﻿@model IEnumerable<CertificadoLoteDecenalMVC.Models.Business.FileRecords.DescargaLote>
+@{
+    ViewBag.Title = "Descargar Lotes";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <h1>
+            <span class="fas fa-file-download"></span>
+            Descargar Lotes
+        </h1>
+        <p>Se muestran todos los lotes generados hasta el momento:</p>
+        <br>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table table-bordered table-striped table-condensed">
+            <thead>
+                <tr>
+                    <th style="vertical-align:middle">Lote</th>
+                    <th style="vertical-align:middle">Fecha de Procesamiento</th>
+                    <th style="vertical-align:middle">Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var lote in Model) {
+                    <tr>
+                        <td>@lote.Nombre</td>
+                        <td>@lote.FechaProcesamiento</td>
+                        <td>
+                            <a href="@Url.Action("DescargarLote", "DescargarLotes", new { nombreArchivo = lote.Nombre })" class="btn btn-danger btn-sm">
+                                <span class="fas fa-download"></span>
+                                Descargar
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th style="vertical-align:middle">Lote</th>
+                    <th style="vertical-align:middle">Fecha de Procesamiento</th>
+                    <th style="vertical-align:middle">Acción</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+@section Styles {
+    @Styles.Render("~/Content/DataTables")
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/DataTables")
+    <script>
+        $("table").DataTable({
+            scrollX: true,
+            order: [[1, "desc"]],
+            language: {
+                url: "@Url.Content("~/Scripts/datatables-spanish-i18n.json")"
+            }
+        });
+    </script>
+}

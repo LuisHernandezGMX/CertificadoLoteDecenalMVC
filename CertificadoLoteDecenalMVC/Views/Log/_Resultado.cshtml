@@ -1,0 +1,32 @@
+﻿@using CertificadoLoteDecenalMVC.Models.Business.Logging
+@model Log.LogResultado
+
+<dl>
+    <dt>Tipo</dt>
+    <dd>
+        @if (Model.Tipo == TipoResultado.Success) {
+            <span class="label label-success">
+                <span class="fas fa-check"></span>
+                Éxito
+            </span>
+        } else if (Model.Tipo == TipoResultado.Info) {
+            <span class="label label-info">
+                <span class="fas fa-info"></span>
+                Información
+            </span>
+        } else if (Model.Tipo == TipoResultado.Warning) {
+            <span class="label label-warning">
+                <span class="fas fa-exclamation-triangle"></span>
+                Advertencia
+            </span>
+        } else {
+            <span class="label label-danger">
+                <span class="fas fa-skull-crossbones"></span>
+                Error
+            </span>
+        }
+    </dd>
+
+    <dt>Mensaje</dt>
+    <dd>- @Model.Mensaje</dd>
+</dl>

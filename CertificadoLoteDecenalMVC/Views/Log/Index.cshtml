@@ -1,0 +1,71 @@
+﻿@model IEnumerable<string>
+@{
+    ViewBag.Title = "Logs";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <h1>
+            <span class="fas fa-book"></span>
+            Logs
+        </h1>
+        <p>A continuación se muestran todos los logs generados hasta el momento:</p>
+        <br>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table table-bordered table-striped table-condensed">
+            <thead>
+                <tr>
+                    <th>Log</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var log in Model) {
+                    <tr>
+                        <td>
+                            @log
+                        </td>
+                        <td>
+                            <a href="@Url.Action("Details", "Log", new { dia = log })" class="btn btn-info btn-sm">
+                                <span class="fas fa-info-circle"></span>
+                                Detalles
+                            </a>
+                            <a href="@Url.Action("DescargarLog", "Log", new { dia = log })" class="btn btn-danger btn-sm">
+                                <span class="fas fa-file-download"></span>
+                                Descargar
+                            </a>
+                            
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Log</th>
+                    <th>Acción</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+@section Styles {
+    @Styles.Render("~/Content/DataTables")
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/DataTables")
+    <script>
+        $("table").DataTable({
+            scrollX: true,
+            columns: [null, { width: "80%" }],
+            order: [[0, "desc"]],
+            language: {
+                url: "@Url.Content("~/Scripts/datatables-spanish-i18n.json")"
+            }
+        });
+    </script>
+}

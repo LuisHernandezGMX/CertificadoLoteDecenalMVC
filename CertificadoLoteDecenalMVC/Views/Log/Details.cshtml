@@ -1,0 +1,120 @@
+﻿@using CertificadoLoteDecenalMVC.Models.Business.Logging
+@model IEnumerable<Log>
+@{
+    ViewBag.Title = $"Detalles del Log del Día {ViewBag.Dia}";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <h1>Detalles del Log del Día @(DateTime.Parse(ViewBag.Dia).ToLongDateString())</h1>
+        <p>A continuación se muestran todos los eventos generados este día:</p>
+        <a href="@Url.Action("Index", "Log")" class="btn btn-warning btn-sm">
+            <span class="fas fa-arrow-left"></span>
+            Regresar
+        </a>
+        <br>
+        <br>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table table-bordered table-condensed table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Hora</th>
+                    <th>Descripción</th>
+                    <th>Resultado</th>
+                    <th>Ubicación</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var log in Model) {
+                    <tr>
+                        <td>@log.Id</td>
+                        <td>@log.Fecha.ToLongTimeString()</td>
+                        <td>@log.Descripcion</td>
+                        <td>
+                            @{
+                                dynamic resultadoStyle;
+                                var htmlResultado = Html
+                                    .Partial("_Resultado", log.Resultado)
+                                    .ToHtmlString()
+                                    .Replace(Environment.NewLine, string.Empty)
+                                    .Replace(@"\", @"\\");
+
+                                if (log.Resultado.Tipo == TipoResultado.Success) {
+                                    resultadoStyle = new {
+                                        Button = "btn-success",
+                                        Message = "Éxito",
+                                        Icon = "fas fa-check",
+                                        AlertStyle = "Success"
+                                    };
+                                } else if (log.Resultado.Tipo == TipoResultado.Info) {
+                                    resultadoStyle = new {
+                                        Button = "btn-info",
+                                        Message = "Información",
+                                        Icon = "fas fa-info",
+                                        AlertStyle = "Info"
+                                    };
+                                } else if (log.Resultado.Tipo == TipoResultado.Warning) {
+                                    resultadoStyle = new {
+                                        Button = "btn-warning",
+                                        Message = "Advertencia",
+                                        Icon = "fas fa-exclamation-triangle",
+                                        AlertStyle = "Warning"
+                                    };
+                                } else {
+                                    resultadoStyle = new {
+                                        Button = "btn-danger",
+                                        Message = "Error",
+                                        Icon = "fas fa-skull-crossbones",
+                                        AlertStyle = "Danger"
+                                    };
+                                }
+
+                                <button class="btn @resultadoStyle.Button btn-sm btn-block" onclick="DetailsUtils.mostrarResultado('@htmlResultado', '@resultadoStyle.AlertStyle')">
+                                    <span class="@resultadoStyle.Icon"></span>
+                                    @resultadoStyle.Message
+                                </button>
+                            }
+                        </td>
+                        <td>
+                            @{
+                                var htmlUbicacion = Html
+                                    .Partial("_Ubicacion", log.Ubicacion)
+                                    .ToHtmlString()
+                                    .Replace(Environment.NewLine, string.Empty)
+                                    .Replace(@"\", @"\\");
+                            }
+                            <button class="btn btn-primary btn-sm btn-block" onclick="DetailsUtils.mostrarUbicacion('@htmlUbicacion')">
+                                <span class="fas fa-code"></span>
+                                Ubicación
+                            </button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>ID</th>
+                    <th>Hora</th>
+                    <th>Descripción</th>
+                    <th>Resultado</th>
+                    <th>Ubicación</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+@section Styles {
+    @Styles.Render("~/Content/Log/Details")
+}
+
+@section Scripts {
+    <script>
+        var SPANISH_DT_URL = "@Url.Content("~/Scripts/datatables-spanish-i18n.json")";
+    </script>
+    @Scripts.Render("~/bundles/Log/Details")
+}

@@ -1,0 +1,22 @@
+﻿@model CertificadoLoteDecenalMVC.Models.Business.Logging.Log.LogUbicacion
+
+<dl>
+    <dt>Clase</dt>
+    <dd class="text-info">- @Model.Clase</dd>
+
+    <dt>Método</dt>
+    <dd class="text-success">- @(Model.Metodo.Nombre)()</dd>
+
+    <dt>Parámetros</dt>
+    <dd>
+        <ul>
+            @foreach (var arg in Model.Metodo.Argumentos) {
+                <li>
+                    [<span class="text-danger">@arg.TipoDato</span>]
+                    <strong>@arg.Parametro</strong> =>
+                    <i>@arg.Valor</i>
+                </li>
+            }
+        </ul>
+    </dd>
+</dl>

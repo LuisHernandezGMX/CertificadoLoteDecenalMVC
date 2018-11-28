@@ -1,0 +1,27 @@
+﻿// Pseudoesquema para los logs de esta aplicación.
+// Especifica la estructura y tipos de dato de cada propiedad.
+{
+  "Logs": [
+    {
+      "Id": "string(Guid)",
+      "Fecha": "DateTime",
+      "Descripcion": "string",
+      "Ubicacion": {
+        "Clase": "string(con espacios de nombres incluidos)",
+        "Metodo": {
+          "Nombre": "string",
+          "Argumentos": [
+            {
+              "Parametro": "string",
+              "Valor": "object"
+            } //, {...}, {...}, {...}, ...
+          ]
+        }
+      },
+      "Resultado": {
+        "Tipo": "Enum TipoResultado",
+        "Mensaje": "string"
+      }
+    } // , {...}, {...}, {...}, ...
+  ]
+}
