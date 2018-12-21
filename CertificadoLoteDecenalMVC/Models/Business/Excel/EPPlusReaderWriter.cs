@@ -120,7 +120,7 @@ namespace CertificadoLoteDecenalMVC.Models.Business.Excel
             var cuotaMillar = (decimal)(double)fila[0, 16];
             var nombreAcreditado = fila[0, 17] as string;
             var rFC = fila[0, 18] as string;
-            var nSS = fila[0, 19].ToString();
+            var nSS = fila[0, 19]?.ToString();
             var desarrollo = fila[0, 20] as string;
             var noCredito = fila[0, 21] as string;
             var cuv = fila[0, 22] as string;
@@ -143,7 +143,7 @@ namespace CertificadoLoteDecenalMVC.Models.Business.Excel
             var finObra = fila[0, 39] as DateTime?;
             var adquisicion = fila[0, 40] as DateTime?;
             var nombreNotario = fila[0, 41] as string;
-            var noEscritura = fila[0, 42] as string;
+            var noEscritura = fila[0, 42]?.ToString();
             var deFecha = (DateTime)fila[0, 43];
             var noNotario = (decimal?)(double?)fila[0, 44];
             var entidad2 = fila[0, 45] as string;
