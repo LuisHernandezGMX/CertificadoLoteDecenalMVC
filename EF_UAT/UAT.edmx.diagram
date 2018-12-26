@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="d665d7ba99c44518b193becde7a95e67" Name="Diagram1" ZoomLevel="54">
         <EntityTypeShape EntityType="UATModel.di_certificado_decenal" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UATModel.di_certificado_lote_decenal" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UATModel.di_certificado_lote_decenal" Width="1.5" PointX="2.5" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

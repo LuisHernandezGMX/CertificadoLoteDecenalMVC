@@ -1,0 +1,117 @@
+{
+  "Logs": [
+    {
+      "Id": "711afdf6-977e-47c8-b74a-885caaf39c02",
+      "Fecha": "2018-12-26T08:59:44.7754378-06:00",
+      "Descripcion": "Archivo de certificados Excel leído con éxito.",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerArchivo",
+          "Argumentos": [
+            {
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Parametro": "archivo",
+              "Valor": "SeguroInfonavitDIC2018.xlsx"
+            },
+            {
+              "TipoDato": "System.String",
+              "Parametro": "tempDir",
+              "Valor": "C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Mensaje": "Ejecución realizada con éxito.",
+        "Tipo": 1
+      }
+    },
+    {
+      "Id": "a9dcfee6-dbb5-40c4-b097-c0d07dc62698",
+      "Fecha": "2018-12-26T09:00:04.0826085-06:00",
+      "Descripcion": "Archivo de certificados Excel leído con éxito.",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerArchivo",
+          "Argumentos": [
+            {
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Parametro": "archivo",
+              "Valor": "SeguroInfonavitDIC2018.xlsx"
+            },
+            {
+              "TipoDato": "System.String",
+              "Parametro": "tempDir",
+              "Valor": "C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Mensaje": "Ejecución realizada con éxito.",
+        "Tipo": 1
+      }
+    },
+    {
+      "Id": "b2b50f8f-c6b3-4985-a30e-8d825b25f17d",
+      "Fecha": "2018-12-26T09:10:41.0027565-06:00",
+      "Descripcion": "Archivo de certificados Excel leído con éxito.",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerArchivo",
+          "Argumentos": [
+            {
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Parametro": "archivo",
+              "Valor": "SeguroInfonavitDIC2018.xlsx"
+            },
+            {
+              "TipoDato": "System.String",
+              "Parametro": "tempDir",
+              "Valor": "C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Mensaje": "Ejecución realizada con éxito.",
+        "Tipo": 1
+      }
+    },
+    {
+      "Id": "30c3e104-0745-4ed3-849d-09dfbdcae781",
+      "Fecha": "2018-12-26T09:11:55.6786172-06:00",
+      "Descripcion": "Certificados de Excel procesados con éxito",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerYProcesarRegistros",
+          "Argumentos": [
+            {
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Parametro": "archivo",
+              "Valor": "SeguroInfonavitDIC2018.xlsx"
+            },
+            {
+              "TipoDato": "System.String",
+              "Parametro": "tempDir",
+              "Valor": "C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            },
+            {
+              "TipoDato": "System.String",
+              "Parametro": "lotesDir",
+              "Valor": "C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\LotesGenerados"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Mensaje": "Los certificados se procesaron con éxito y su respectivo lote ha sido generado. => SeguroInfonavitDIC2018_LOTE_26-12-2018 09-11-55 a. m..xlsx",
+        "Tipo": 0
+      }
+    }
+  ]
+}

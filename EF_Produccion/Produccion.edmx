@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ProduccionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ProduccionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="di_certificado_decenal">
           <Key>
             <PropertyRef Name="id_reg_cer" />
@@ -17,7 +17,7 @@
           <Property Name="nro_pol" Type="numeric" Precision="9" Scale="0" Nullable="false" />
           <Property Name="txt_nro_pol" Type="varchar" MaxLength="120" Nullable="false" />
           <Property Name="cod_item" Type="int" Nullable="false" />
-          <Property Name="txt_certificado" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="txt_certificado" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="fec_ini" Type="smalldatetime" />
           <Property Name="fec_fin_seg" Type="smalldatetime" />
           <Property Name="fec_fin_tres" Type="smalldatetime" />
@@ -67,7 +67,7 @@
           </Key>
           <Property Name="id_reg_cer" Type="int" Nullable="false" />
           <Property Name="nro_lote" Type="int" Nullable="false" />
-          <Property Name="txt_certificado" Type="varchar" MaxLength="15" />
+          <Property Name="txt_certificado" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="txt_usuario_alta" Type="varchar" MaxLength="120" Nullable="false" />
           <Property Name="fec_alta" Type="smalldatetime" Nullable="false" />
           <Property Name="txt_usuario_baja" Type="varchar" MaxLength="120" />
@@ -82,8 +82,7 @@
           <EntitySet Name="di_certificado_decenal" EntityType="Self.di_certificado_decenal" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="di_certificado_lote_decenal" EntityType="Self.di_certificado_lote_decenal" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ProduccionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -99,7 +98,7 @@
           <Property Name="nro_pol" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
           <Property Name="txt_nro_pol" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="cod_item" Type="Int32" Nullable="false" />
-          <Property Name="txt_certificado" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="txt_certificado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="fec_ini" Type="DateTime" Precision="0" />
           <Property Name="fec_fin_seg" Type="DateTime" Precision="0" />
           <Property Name="fec_fin_tres" Type="DateTime" Precision="0" />
@@ -149,7 +148,7 @@
           </Key>
           <Property Name="id_reg_cer" Type="Int32" Nullable="false" />
           <Property Name="nro_lote" Type="Int32" Nullable="false" />
-          <Property Name="txt_certificado" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="txt_certificado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="txt_usuario_alta" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="fec_alta" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="txt_usuario_baja" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
