@@ -19,7 +19,7 @@
             @Html.AntiForgeryToken()
             <div class="form-group">
                 <label>Seleccione su layout:</label>
-                <input type="file" id="layoutCertificados" name="layoutCertificados" accept=".xlsx" />
+                <input type="file" id="layoutCertificados" name="layoutCertificados" accept=".xlsx,.xls" />
             </div>
             <button type="submit" class="btn btn-primary">
                 <span class="fas fa-upload"></span>
@@ -111,11 +111,11 @@
                                 <td>@registro.Poliza</td>
                                 <td>@registro.Ubc</td>
                                 <td>@registro.NoCertificado</td>
-                                <td>@registro.FecIni</td>
-                                <td>@registro.FecFinDos</td>
-                                <td>@registro.FecFinTres</td>
-                                <td>@registro.FecFinCinco</td>
-                                <td>@registro.FecFinDiez</td>
+                                <td>@registro.FecIni.ToShortDateString()</td>
+                                <td>@(registro.FecFinDos?.ToShortDateString())</td>
+                                <td>@(registro.FecFinTres?.ToShortDateString())</td>
+                                <td>@registro.FecFinCinco.ToShortDateString()</td>
+                                <td>@registro.FecFinDiez.ToShortDateString()</td>
                                 <td>$ @registro.Avaluo</td>
                                 <td>$ @registro.Anticipo</td>
                                 <td>$ @registro.PrimaNetaReal</td>
@@ -151,7 +151,7 @@
                                 <td>@registro.Adquisicion</td>
                                 <td>@registro.NombreNotario</td>
                                 <td>@registro.NoEscritura</td>
-                                <td>@registro.DeFecha</td>
+                                <td>@registro.DeFecha.ToShortDateString()</td>
                                 <td>@registro.NoNotario</td>
                                 <td>@registro.Entidad2</td>
                             </tr>

@@ -18,8 +18,7 @@ namespace CertificadoLoteDecenalMVC.Models.Business.Services.Home
     {
         private ILogger logger;
         private ISet<string> excelMimeTypes = new HashSet<string> {
-            //"application/vnd.ms-excel",                                            // [.xls, .xlt, .xla]
-            // NOTA: No se aceptarán por el momento archivos XLS, debido a que no se cuenta con las bibliotecas de Office para archivos <= 2003.
+            "application/vnd.ms-excel",                                            // [.xls, .xlt, .xla]
             "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",   // [.xlsx]
             "application/vnd.openxmlformats-officedocument.spreadsheetml.template" // [.xltx]
         };
@@ -118,7 +117,7 @@ namespace CertificadoLoteDecenalMVC.Models.Business.Services.Home
                 return new Message(false, "Por favor, seleccione un archivo.");
 
             if (!excelMimeTypes.Contains(archivo.ContentType.ToLowerInvariant()))
-                return new Message(false, "Solo se aceptan archivos de Excel 2007 o superior.");
+                return new Message(false, "Solo se aceptan archivos de Excel.");
 
             return new Message(true, string.Empty);
         }
@@ -140,12 +139,27 @@ namespace CertificadoLoteDecenalMVC.Models.Business.Services.Home
             var tempFile = Path.Combine(deletableDir, archivo.FileName);
             archivo.SaveAs(tempFile);
 
-            using (IExcelIO lector = new EPPlusReaderWriter(tempFile)) {
+            using (IExcelIO lector = ObtenerLector(archivo.ContentType.ToLowerInvariant(), tempFile)) {
                 registros = lector.LeerArchivo();
             }
 
             Directory.Delete(deletableDir, true);
             return registros;
+        }
+
+        /// <summary>
+        /// Regresa un lector apropiado para el tipo de archivo Excel que se maneje.
+        /// </summary>
+        /// <param name="contentType">El tipo MIME del archivo de Excel.</param>
+        /// <param name="rutaArchivo">La ruta completa hacia el archivo de Excel.</param>
+        /// <returns>Una nueva instancia de <see cref="IExcelIO"/>.</returns>
+        private IExcelIO ObtenerLector(string contentType, string rutaArchivo)
+        {
+            if (contentType == "application/vnd.ms-excel") {
+                return new OleDbReader(rutaArchivo);
+            }
+
+            return new EPPlusReaderWriter(rutaArchivo);
         }
 
         /// <summary>

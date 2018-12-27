@@ -112,6 +112,195 @@
         "Mensaje": "Los certificados se procesaron con éxito y su respectivo lote ha sido generado. => SeguroInfonavitDIC2018_LOTE_26-12-2018 09-11-55 a. m..xlsx",
         "Tipo": 0
       }
+    },
+    {
+      "Id": "398ae794-fd3e-4a3d-ab5c-678917782302",
+      "Fecha": "2018-12-26T17:23:55.6649038-06:00",
+      "Descripcion": "Archivo de certificados Excel leído con éxito.",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerArchivo",
+          "Argumentos": [
+            {
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Parametro": "archivo",
+              "Valor": "SeguroInfonavitDIC2018.xlsx"
+            },
+            {
+              "TipoDato": "System.String",
+              "Parametro": "tempDir",
+              "Valor": "C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Mensaje": "Ejecución realizada con éxito.",
+        "Tipo": 1
+      }
+    },
+    {
+      "Id": "6ae86d34-d568-40a3-b958-166fd31a82d8",
+      "Fecha": "2018-12-26T17:24:23.4733914-06:00",
+      "Descripcion": "Error en lectura de archivo de certificados Excel",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerArchivo",
+          "Argumentos": [
+            {
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Parametro": "archivo",
+              "Valor": "SeguroInfonavitDIC2018 - Carga.xls"
+            },
+            {
+              "TipoDato": "System.String",
+              "Parametro": "tempDir",
+              "Valor": "C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Mensaje": "System.InvalidCastException: La conversión especificada no es válida.\r\n   en CertificadoLoteDecenalMVC.Models.Business.Excel.OleDbReader.ParseFila(Object[] fila) en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Excel\\OleDbReader.cs:línea 112\r\n   en CertificadoLoteDecenalMVC.Models.Business.Excel.OleDbReader.<LeerArchivo>b__2_0(DataRow row) en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Excel\\OleDbReader.cs:línea 54\r\n   en System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()\r\n   en System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)\r\n   en System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)\r\n   en CertificadoLoteDecenalMVC.Models.Business.Excel.OleDbReader.LeerArchivo() en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Excel\\OleDbReader.cs:línea 51\r\n   en CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService.LeerArchivo(HttpPostedFileBase archivo, String tempDir) en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Services\\HomeService.cs:línea 143\r\n   en CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService.LeerArchivo(HttpPostedFileBase archivo, String tempDir, Message& resultado) en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Services\\HomeService.cs:línea 59",
+        "Tipo": 3
+      }
+    },
+    {
+      "Id": "c872b4f4-5fb9-4b3e-b4e3-40b3df013c2b",
+      "Fecha": "2018-12-26T17:26:42.8348637-06:00",
+      "Descripcion": "Error en lectura de archivo de certificados Excel",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerArchivo",
+          "Argumentos": [
+            {
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Parametro": "archivo",
+              "Valor": "SeguroInfonavitDIC2018 - Carga.xls"
+            },
+            {
+              "TipoDato": "System.String",
+              "Parametro": "tempDir",
+              "Valor": "C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Mensaje": "System.InvalidCastException: La conversión especificada no es válida.\r\n   en CertificadoLoteDecenalMVC.Models.Business.Excel.OleDbReader.ParseFila(Object[] fila) en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Excel\\OleDbReader.cs:línea 112\r\n   en CertificadoLoteDecenalMVC.Models.Business.Excel.OleDbReader.<LeerArchivo>b__2_0(DataRow row) en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Excel\\OleDbReader.cs:línea 54\r\n   en System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()\r\n   en System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)\r\n   en System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)\r\n   en CertificadoLoteDecenalMVC.Models.Business.Excel.OleDbReader.LeerArchivo() en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Excel\\OleDbReader.cs:línea 51\r\n   en CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService.LeerArchivo(HttpPostedFileBase archivo, String tempDir) en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Services\\HomeService.cs:línea 143\r\n   en CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService.LeerArchivo(HttpPostedFileBase archivo, String tempDir, Message& resultado) en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Services\\HomeService.cs:línea 59",
+        "Tipo": 3
+      }
+    },
+    {
+      "Id": "e03ad026-1f1d-459c-bde2-510c9b35ffd2",
+      "Fecha": "2018-12-26T17:27:47.3503788-06:00",
+      "Descripcion": "Error en lectura de archivo de certificados Excel",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerArchivo",
+          "Argumentos": [
+            {
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Parametro": "archivo",
+              "Valor": "SeguroInfonavitDIC2018 - Carga.xls"
+            },
+            {
+              "TipoDato": "System.String",
+              "Parametro": "tempDir",
+              "Valor": "C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Mensaje": "System.InvalidCastException: La conversión especificada no es válida.\r\n   en CertificadoLoteDecenalMVC.Models.Business.Excel.OleDbReader.ParseFila(Object[] fila) en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Excel\\OleDbReader.cs:línea 112\r\n   en CertificadoLoteDecenalMVC.Models.Business.Excel.OleDbReader.<LeerArchivo>b__2_0(DataRow row) en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Excel\\OleDbReader.cs:línea 54\r\n   en System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()\r\n   en System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)\r\n   en System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)\r\n   en CertificadoLoteDecenalMVC.Models.Business.Excel.OleDbReader.LeerArchivo() en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Excel\\OleDbReader.cs:línea 51\r\n   en CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService.LeerArchivo(HttpPostedFileBase archivo, String tempDir) en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Services\\HomeService.cs:línea 143\r\n   en CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService.LeerArchivo(HttpPostedFileBase archivo, String tempDir, Message& resultado) en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Services\\HomeService.cs:línea 59",
+        "Tipo": 3
+      }
+    },
+    {
+      "Id": "6d132ce4-1b08-49bf-b471-be11cfb23a46",
+      "Fecha": "2018-12-26T17:28:06.1107581-06:00",
+      "Descripcion": "Error en lectura de archivo de certificados Excel",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerArchivo",
+          "Argumentos": [
+            {
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Parametro": "archivo",
+              "Valor": "SeguroInfonavitDIC2018 - Carga.xls"
+            },
+            {
+              "TipoDato": "System.String",
+              "Parametro": "tempDir",
+              "Valor": "C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Mensaje": "System.InvalidCastException: La conversión especificada no es válida.\r\n   en CertificadoLoteDecenalMVC.Models.Business.Excel.OleDbReader.ParseFila(Object[] fila) en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Excel\\OleDbReader.cs:línea 153\r\n   en CertificadoLoteDecenalMVC.Models.Business.Excel.OleDbReader.<LeerArchivo>b__2_0(DataRow row) en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Excel\\OleDbReader.cs:línea 54\r\n   en System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()\r\n   en System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)\r\n   en System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)\r\n   en CertificadoLoteDecenalMVC.Models.Business.Excel.OleDbReader.LeerArchivo() en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Excel\\OleDbReader.cs:línea 51\r\n   en CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService.LeerArchivo(HttpPostedFileBase archivo, String tempDir) en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Services\\HomeService.cs:línea 143\r\n   en CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService.LeerArchivo(HttpPostedFileBase archivo, String tempDir, Message& resultado) en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Services\\HomeService.cs:línea 59",
+        "Tipo": 3
+      }
+    },
+    {
+      "Id": "e329b445-a2f0-491d-851c-ab5497060405",
+      "Fecha": "2018-12-26T17:30:11.4109674-06:00",
+      "Descripcion": "Error en lectura de archivo de certificados Excel",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerArchivo",
+          "Argumentos": [
+            {
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Parametro": "archivo",
+              "Valor": "SeguroInfonavitDIC2018 - Carga.xls"
+            },
+            {
+              "TipoDato": "System.String",
+              "Parametro": "tempDir",
+              "Valor": "C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Mensaje": "System.InvalidCastException: La conversión especificada no es válida.\r\n   en CertificadoLoteDecenalMVC.Models.Business.Excel.OleDbReader.ParseFila(Object[] fila) en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Excel\\OleDbReader.cs:línea 153\r\n   en CertificadoLoteDecenalMVC.Models.Business.Excel.OleDbReader.<LeerArchivo>b__2_0(DataRow row) en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Excel\\OleDbReader.cs:línea 54\r\n   en System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()\r\n   en System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)\r\n   en System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)\r\n   en CertificadoLoteDecenalMVC.Models.Business.Excel.OleDbReader.LeerArchivo() en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Excel\\OleDbReader.cs:línea 51\r\n   en CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService.LeerArchivo(HttpPostedFileBase archivo, String tempDir) en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Services\\HomeService.cs:línea 143\r\n   en CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService.LeerArchivo(HttpPostedFileBase archivo, String tempDir, Message& resultado) en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Services\\HomeService.cs:línea 59",
+        "Tipo": 3
+      }
+    },
+    {
+      "Id": "e7262673-9e79-42c0-8b92-57fcd0657019",
+      "Fecha": "2018-12-26T17:32:08.0589442-06:00",
+      "Descripcion": "Archivo de certificados Excel leído con éxito.",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerArchivo",
+          "Argumentos": [
+            {
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Parametro": "archivo",
+              "Valor": "SeguroInfonavitDIC2018 - Carga.xls"
+            },
+            {
+              "TipoDato": "System.String",
+              "Parametro": "tempDir",
+              "Valor": "C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Mensaje": "Ejecución realizada con éxito.",
+        "Tipo": 1
+      }
     }
   ]
 }

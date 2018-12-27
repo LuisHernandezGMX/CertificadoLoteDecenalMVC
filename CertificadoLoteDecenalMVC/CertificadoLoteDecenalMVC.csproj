@@ -135,6 +135,7 @@
     </Compile>
     <Compile Include="Models\Business\Excel\EPPlusReaderWriter.cs" />
     <Compile Include="Models\Business\Excel\IExcelIO.cs" />
+    <Compile Include="Models\Business\Excel\OleDbReader.cs" />
     <Compile Include="Models\Business\Extensions\LoggerExtensions.cs" />
     <Compile Include="Models\Business\FileRecords\Certificado.cs" />
     <Compile Include="Models\Business\FileRecords\DescargaLote.cs" />
