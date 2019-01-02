@@ -8,7 +8,7 @@ using CertificadoLoteDecenalMVC.Models.Business.Logging;
 using CertificadoLoteDecenalMVC.Models.Business.Extensions;
 using CertificadoLoteDecenalMVC.Models.Business.FileRecords;
 
-namespace CertificadoLoteDecenalMVC.Models.DAL.Home
+namespace CertificadoLoteDecenalMVC.Models.DAL.DAO
 {
     public class HomeDao
     {

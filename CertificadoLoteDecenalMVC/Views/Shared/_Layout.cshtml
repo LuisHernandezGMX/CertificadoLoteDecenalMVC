@@ -36,30 +36,49 @@
                     </a>
                 </div>
                 <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
+                    @if (User.Identity.IsAuthenticated) {
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a href="@Url.Action("LayoutCertificados", "Home")">
+                                    <span class="fas fa-file-excel"></span>
+                                    Subir Archivo Layout
+                                </a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Index", "DescargarLotes")">
+                                    <span class="fas fa-file-download"></span>
+                                    Descargar Lotes
+                                </a>
+                            </li>
+                            @if (User.IsInRole("Internet_Desarrollo")) {
+                                <li>
+                                    <a href="@Url.Action("Index", "Log")">
+                                        <span class="fas fa-book"></span>
+                                        Logs
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    }
+                    <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="@Url.Action("LayoutCertificados", "Home")">
-                                <span class="fas fa-file-excel"></span>
-                                Subir Archivo Layout
-                            </a>
-                        </li>
-                        <li>
-                            <a href="@Url.Action("Index", "DescargarLotes")">
-                                <span class="fas fa-file-download"></span>
-                                Descargar Lotes
-                            </a>
-                        </li>
-                        <li>
-                            <a href="@Url.Action("Index", "Log")">
-                                <span class="fas fa-book"></span>
-                                Logs
-                            </a>
+                            @if (User.Identity.IsAuthenticated) {
+                                <a href="@Url.Action("Logout", "Account")">
+                                    <span class="fas fa-sign-out-alt"></span>
+                                    Cerrar Sesión
+                                </a>
+                            } else {
+                                <a href="@Url.Action("Login", "Account")">
+                                    <span class="fas fa-sign-in-alt"></span>
+                                    Iniciar Sesión
+                                </a>
+                            }
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="container-fluid body-content">
+        <div class="container body-content">
             @RenderBody()
             <hr />
             <footer>

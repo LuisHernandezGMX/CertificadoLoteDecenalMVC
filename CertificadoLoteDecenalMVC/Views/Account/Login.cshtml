@@ -1,0 +1,36 @@
+﻿@model CertificadoLoteDecenalMVC.Models.DAL.ViewModels.Account.LoginViewModel
+@{
+    ViewBag.Title = "Iniciar Sesión";
+    string validUserName = IsPost ? (ViewData.ModelState.IsValidField("UserName") ? "has-success" : "has-error") : string.Empty;
+    string validPassword = IsPost ? (ViewData.ModelState.IsValidField("Password") ? "has-success" : "has-error") : string.Empty;
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <h1>
+            <span class="fas fa-sign-in-alt"></span>
+            Iniciar Sesión
+        </h1>
+        <p>Por favor, ingrese sus credenciales de GMX:</p>
+        <br>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "form-horizontal" })) {
+            @Html.AntiForgeryToken()
+
+            <div class="form-group @validUserName">
+                @Html.LabelFor(model => model.UserName, new { @class = "control-label" })
+                @Html.TextBoxFor(model => model.UserName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.UserName, string.Empty, new { @class = "text-danger" })
+            </div>
+            <div class="form-group @validPassword">
+                @Html.LabelFor(model => model.Password, new { @class = "control-label" })
+                @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Password, string.Empty, new { @class = "text-danger" })
+            </div>
+            <input type="submit" class="btn btn-primary" value="Entrar" />
+        }
+    </div>
+</div>

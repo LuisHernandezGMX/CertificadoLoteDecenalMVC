@@ -5,7 +5,7 @@ using System.Globalization;
 using System.Collections.Generic;
 using CertificadoLoteDecenalMVC.Models.Business.FileRecords;
 
-namespace CertificadoLoteDecenalMVC.Models.DAL.DescargarLotes
+namespace CertificadoLoteDecenalMVC.Models.DAL.DAO
 {
     public static class DescargarLotesDao
     {

@@ -144,6 +144,33 @@
         "Mensaje": "System.Exception: Prueba dentro de EscribirArchivo()\r\n   en CertificadoLoteDecenalMVC.Models.Business.Excel.EPPlusReaderWriter.EscribirArchivo(String rutaArchivo, IEnumerable`1 registros, DateTime fechaInicio, DateTime fechaTermino, TimeSpan tiempoProcesamiento) en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Excel\\EPPlusReaderWriter.cs:línea 72",
         "Tipo": 3
       }
+    },
+    {
+      "Id": "292d8488-b39a-4a5a-9556-79ee739b22a0",
+      "Fecha": "2019-01-02T12:32:35.6729397-06:00",
+      "Descripcion": "Archivo de certificados Excel leído con éxito.",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerArchivo",
+          "Argumentos": [
+            {
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Parametro": "archivo",
+              "Valor": "SeguroInfonavitDIC2018.xlsx"
+            },
+            {
+              "TipoDato": "System.String",
+              "Parametro": "tempDir",
+              "Valor": "C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Mensaje": "Ejecución realizada con éxito.",
+        "Tipo": 1
+      }
     }
   ]
 }

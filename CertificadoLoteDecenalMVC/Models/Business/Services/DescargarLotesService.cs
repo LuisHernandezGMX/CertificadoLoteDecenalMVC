@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using CertificadoLoteDecenalMVC.Models.DAL.DescargarLotes;
+using CertificadoLoteDecenalMVC.Models.DAL.DAO;
 using CertificadoLoteDecenalMVC.Models.Business.FileRecords;
 
 namespace CertificadoLoteDecenalMVC.Models.Business.Services.DescargarLotes

@@ -16,6 +16,7 @@ namespace CertificadoLoteDecenalMVC.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public ViewResult Index()
         {
             return View();
