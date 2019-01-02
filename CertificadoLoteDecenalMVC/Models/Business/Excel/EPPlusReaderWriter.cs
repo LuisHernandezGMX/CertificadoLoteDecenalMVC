@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Linq;
+using System.Reflection;
 using System.Collections.Generic;
 using OfficeOpenXml;
+using CertificadoLoteDecenalMVC.Models.Business.Logging;
+using CertificadoLoteDecenalMVC.Models.Business.Extensions;
 using CertificadoLoteDecenalMVC.Models.Business.FileRecords;
 
 namespace CertificadoLoteDecenalMVC.Models.Business.Excel
@@ -14,6 +17,7 @@ namespace CertificadoLoteDecenalMVC.Models.Business.Excel
     {
         private ExcelPackage excel;
         private ExcelWorksheet worksheet;
+        private ILogger logger;
 
         /// <summary>
         /// Abre el archivo de Excel indicado para su lectura.
@@ -28,8 +32,9 @@ namespace CertificadoLoteDecenalMVC.Models.Business.Excel
         /// <summary>
         /// Crea un nuevo archivo de Excel con una hoja.
         /// </summary>
-        public EPPlusReaderWriter()
+        public EPPlusReaderWriter(ILogger logger)
         {
+            this.logger = logger;
             excel = new ExcelPackage();
             worksheet = excel.Workbook.Worksheets.Add("Hoja1");
         }
@@ -62,36 +67,54 @@ namespace CertificadoLoteDecenalMVC.Models.Business.Excel
         /// <param name="tiempoProcesamiento">El tiempo de procesamiento.</param>
         public void EscribirArchivo(string rutaArchivo, IEnumerable<PolizaEndosoLote> registros, DateTime fechaInicio, DateTime fechaTermino, TimeSpan tiempoProcesamiento)
         {
-            // Se agrega el tiempo de procesamiento.
-            var timeRange = worksheet.Cells["A1:C2"];
-            var timeTable = worksheet.Tables.Add(timeRange, "TiempoProcesamiento");
+            try {
+                // Se agrega el tiempo de procesamiento.
+                var timeRange = worksheet.Cells["A1:C2"];
+                var timeTable = worksheet.Tables.Add(timeRange, "TiempoProcesamiento");
 
-            timeTable.Columns[0].Name = "Hora de Inicio";
-            timeTable.Columns[1].Name = "Hora de Término";
-            timeTable.Columns[2].Name = "Tiempo de Procesamiento";
+                timeTable.Columns[0].Name = "Hora de Inicio";
+                timeTable.Columns[1].Name = "Hora de Término";
+                timeTable.Columns[2].Name = "Tiempo de Procesamiento";
 
-            worksheet.Cells["A2"].Value = fechaInicio.ToLongTimeString();
-            worksheet.Cells["B2"].Value = fechaTermino.ToLongTimeString();
-            worksheet.Cells["C2"].Value = tiempoProcesamiento.ToString(@"hh\:mm\:ss");
+                worksheet.Cells["A2"].Value = fechaInicio.ToLongTimeString();
+                worksheet.Cells["B2"].Value = fechaTermino.ToLongTimeString();
+                worksheet.Cells["C2"].Value = tiempoProcesamiento.ToString(@"hh\:mm\:ss");
 
-            // Y se agrega una tabla con los resultados.
-            int rowNum = 5;
-            var range = worksheet.Cells[$"A4:C{registros.Count() + 4}"];
-            var table = worksheet.Tables.Add(range, "CertificadoLoteDecenal");
+                // Y se agrega una tabla con los resultados.
+                int rowNum = 5;
+                var range = worksheet.Cells[$"A4:C{registros.Count() + 4}"];
+                var table = worksheet.Tables.Add(range, "CertificadoLoteDecenal");
 
-            table.Columns[0].Name = "Póliza";
-            table.Columns[1].Name = "Endoso";
-            table.Columns[2].Name = "Lote";
+                table.Columns[0].Name = "Póliza";
+                table.Columns[1].Name = "Endoso";
+                table.Columns[2].Name = "Lote";
 
-            foreach (var registro in registros) {
-                worksheet.Cells[$"A{rowNum}"].Value = registro.NroPoliza;
-                worksheet.Cells[$"B{rowNum}"].Value = registro.NroEndoso;
-                worksheet.Cells[$"C{rowNum}"].Value = registro.Lote;
-                rowNum++;
+                foreach (var registro in registros) {
+                    worksheet.Cells[$"A{rowNum}"].Value = registro.NroPoliza;
+                    worksheet.Cells[$"B{rowNum}"].Value = registro.NroEndoso;
+                    worksheet.Cells[$"C{rowNum}"].Value = registro.Lote;
+                    rowNum++;
+                }
+
+                worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
+                excel.SaveAs(new System.IO.FileInfo(rutaArchivo));
+            } catch (Exception e) {
+                var clase = GetType().FullName;
+                var metodo = MethodBase.GetCurrentMethod();
+
+                logger.ErrorLog(
+                    "Error al escribir el archivo de lote Excel.",
+                    clase,
+                    e.ToString(),
+                    metodo,
+                    rutaArchivo,
+                    registros?.Count() ?? 0,
+                    fechaInicio,
+                    fechaTermino,
+                    tiempoProcesamiento);
+
+                throw;
             }
-
-            worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
-            excel.SaveAs(new System.IO.FileInfo(rutaArchivo));
         }
 
         /// <summary>

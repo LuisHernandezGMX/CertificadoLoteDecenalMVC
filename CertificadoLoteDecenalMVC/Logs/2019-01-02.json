@@ -1,0 +1,149 @@
+{
+  "Logs": [
+    {
+      "Id": "69621e64-3372-4195-b5e3-1bc55f52b738",
+      "Fecha": "2019-01-02T10:46:13.0013741-06:00",
+      "Descripcion": "Archivo de certificados Excel leído con éxito.",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerArchivo",
+          "Argumentos": [
+            {
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Parametro": "archivo",
+              "Valor": "SeguroInfonavitDIC2018.xlsx"
+            },
+            {
+              "TipoDato": "System.String",
+              "Parametro": "tempDir",
+              "Valor": "C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Mensaje": "Ejecución realizada con éxito.",
+        "Tipo": 1
+      }
+    },
+    {
+      "Id": "3d582efa-6a13-4e26-814f-66a9c3a9dc34",
+      "Fecha": "2019-01-02T10:51:51.7834337-06:00",
+      "Descripcion": "Archivo de certificados Excel leído con éxito.",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerArchivo",
+          "Argumentos": [
+            {
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Parametro": "archivo",
+              "Valor": "SeguroInfonavitDIC2018.xlsx"
+            },
+            {
+              "TipoDato": "System.String",
+              "Parametro": "tempDir",
+              "Valor": "C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Mensaje": "Ejecución realizada con éxito.",
+        "Tipo": 1
+      }
+    },
+    {
+      "Id": "9f9b4feb-4bb9-4b85-a1a5-1f16f2bc5d29",
+      "Fecha": "2019-01-02T10:52:41.2596501-06:00",
+      "Descripcion": "Error al procesar registros en base de datos.",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.DAL.Home.HomeDao",
+        "Metodo": {
+          "Nombre": "ObtenerNumerosLote",
+          "Argumentos": [
+            {
+              "TipoDato": "System.Linq.ILookup`2[System.String,CertificadoLoteDecenalMVC.Models.Business.FileRecords.Certificado]",
+              "Parametro": "agrupados",
+              "Valor": "Primer Agrupamiento: [01-102-7002686-0001-01]"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Mensaje": "System.Exception: Prueba dentro de ObtenerNumerosLote().\r\n   en CertificadoLoteDecenalMVC.Models.DAL.Home.HomeDao.ObtenerNumerosLote(ILookup`2 agrupados) en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\DAL\\HomeDao.cs:línea 67",
+        "Tipo": 3
+      }
+    },
+    {
+      "Id": "93c7ed65-1844-4d29-92e5-99a7fd5589ad",
+      "Fecha": "2019-01-02T10:57:39.3590122-06:00",
+      "Descripcion": "Archivo de certificados Excel leído con éxito.",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerArchivo",
+          "Argumentos": [
+            {
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Parametro": "archivo",
+              "Valor": "SeguroInfonavitDIC2018.xlsx"
+            },
+            {
+              "TipoDato": "System.String",
+              "Parametro": "tempDir",
+              "Valor": "C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Mensaje": "Ejecución realizada con éxito.",
+        "Tipo": 1
+      }
+    },
+    {
+      "Id": "b6d6e384-56d5-453b-939c-826eb78961ef",
+      "Fecha": "2019-01-02T10:58:08.3128916-06:00",
+      "Descripcion": "Error al escribir el archivo de lote Excel.",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Excel.EPPlusReaderWriter",
+        "Metodo": {
+          "Nombre": "EscribirArchivo",
+          "Argumentos": [
+            {
+              "TipoDato": "System.String",
+              "Parametro": "rutaArchivo",
+              "Valor": "C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\LotesGenerados\\SeguroInfonavitDIC2018_LOTE_02-01-2019 10-57-39 a. m..xlsx"
+            },
+            {
+              "TipoDato": "System.Collections.Generic.IEnumerable`1[CertificadoLoteDecenalMVC.Models.Business.FileRecords.PolizaEndosoLote]",
+              "Parametro": "registros",
+              "Valor": "0"
+            },
+            {
+              "TipoDato": "System.DateTime",
+              "Parametro": "fechaInicio",
+              "Valor": "02/01/2019 10:57:39 a. m."
+            },
+            {
+              "TipoDato": "System.DateTime",
+              "Parametro": "fechaTermino",
+              "Valor": "02/01/2019 10:57:39 a. m."
+            },
+            {
+              "TipoDato": "System.TimeSpan",
+              "Parametro": "tiempoProcesamiento",
+              "Valor": "00:00:00.0007623"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Mensaje": "System.Exception: Prueba dentro de EscribirArchivo()\r\n   en CertificadoLoteDecenalMVC.Models.Business.Excel.EPPlusReaderWriter.EscribirArchivo(String rutaArchivo, IEnumerable`1 registros, DateTime fechaInicio, DateTime fechaTermino, TimeSpan tiempoProcesamiento) en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Excel\\EPPlusReaderWriter.cs:línea 72",
+        "Tipo": 3
+      }
+    }
+  ]
+}

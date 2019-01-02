@@ -1,19 +1,22 @@
 ﻿using System;
 using System.Linq;
+using System.Reflection;
 using System.Collections.Generic;
 using System.Data.Entity.Core.Objects;
 using EF_Produccion;
+using CertificadoLoteDecenalMVC.Models.Business.Logging;
+using CertificadoLoteDecenalMVC.Models.Business.Extensions;
 using CertificadoLoteDecenalMVC.Models.Business.FileRecords;
 
 namespace CertificadoLoteDecenalMVC.Models.DAL.Home
 {
-    public static class HomeDao
+    public class HomeDao
     {
         /// <summary>
         /// Representa una póliza compuesta leída del archivo de Excel.
         /// Esta póliza tiene el formato "[cod_suc]-[cod_ramo]-[nro_pol]-[nro_endoso]-[XX]"
         /// </summary>
-        class PolizaCompuesta
+        private class PolizaCompuesta
         {
             public decimal CodSucursal { get; private set; }
             public decimal CodRamo { get; private set; }
@@ -32,12 +35,26 @@ namespace CertificadoLoteDecenalMVC.Models.DAL.Home
         }
 
         /// <summary>
+        /// Logger de la aplicación.
+        /// </summary>
+        private ILogger logger;
+
+        /// <summary>
+        /// Crea una nueva instancia con el logger indicado.
+        /// </summary>
+        /// <param name="logger">El logger utilizado por la aplicación.</param>
+        public HomeDao(ILogger logger)
+        {
+            this.logger = logger;
+        }
+
+        /// <summary>
         /// Procesa los registros y obtiene una colección de (Número de Póliza, Número de Endoso, Número de Lote) por
         /// cada grupo de pólizas.
         /// </summary>
         /// <param name="agrupados">Los registros leídos del archivo de Excel agrupados por su número de póliza.</param>
         /// <returns>Una lista de objetos PolizaEndosoLote.</returns>
-        public static IEnumerable<PolizaEndosoLote> ObtenerNumerosLote(ILookup<string, Certificado> agrupados)
+        public IEnumerable<PolizaEndosoLote> ObtenerNumerosLote(ILookup<string, Certificado> agrupados)
         {
             var numerosLote = new List<PolizaEndosoLote>();
             var ubicacion = 2; // TODO:  Octubre 2018 - Por defecto se asigna la ubicación 2 hasta nuevo aviso.
@@ -137,8 +154,19 @@ namespace CertificadoLoteDecenalMVC.Models.DAL.Home
 
                         db.SaveChanges();
                         transaction.Commit();
-                    } catch {
+                    } catch (Exception e) {
                         transaction.Rollback();
+
+                        var clase = GetType().FullName;
+                        var metodo = MethodBase.GetCurrentMethod();
+
+                        logger.ErrorLog(
+                            "Error al procesar registros en base de datos.",
+                            clase,
+                            e.ToString(),
+                            metodo,
+                            $"Primer Agrupamiento: [{agrupados.First().Key}]");
+
                         throw;
                     }
                 }

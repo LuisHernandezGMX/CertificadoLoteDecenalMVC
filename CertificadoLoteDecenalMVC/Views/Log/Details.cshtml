@@ -32,7 +32,7 @@
                 @foreach (var log in Model) {
                     <tr>
                         <td>@log.Id</td>
-                        <td>@log.Fecha.ToLongTimeString()</td>
+                        <td>@log.Fecha.ToString("HH:mm:ss")</td>
                         <td>@log.Descripcion</td>
                         <td>
                             @{

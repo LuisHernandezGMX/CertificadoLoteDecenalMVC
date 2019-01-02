@@ -61,10 +61,8 @@ namespace CertificadoLoteDecenalMVC.Models.Business.Services.Home
                 logger.InfoLog("Archivo de certificados Excel leído con éxito.", clase, "Ejecución realizada con éxito.", metodo, archivo.FileName, tempDir);
 
                 return registros;
-            } catch (Exception e) {
-                logger.ErrorLog("Error en lectura de archivo de certificados Excel", clase, e.ToString(), metodo, archivo?.FileName, tempDir);
+            } catch {
                 resultado = new Message(false, "Ocurrió un error al leer el archivo. Por favor, verifique su archivo e intente de nuevo.");
-
                 return new Certificado[] { };
             }
         }
@@ -98,8 +96,7 @@ namespace CertificadoLoteDecenalMVC.Models.Business.Services.Home
                     clase, $"{resultado.Mensaje} => {resultado.Valor}", metodo, archivo.FileName, tempDir, lotesDir);
 
                 return resultado;
-            } catch (Exception e) {
-                logger.ErrorLog("Error al procesar el archivo de certificados Excel", clase, e.ToString(), metodo, archivo?.FileName, tempDir, lotesDir);
+            } catch {
                 return new Message(false, "Ocurrió un error al leer el archivo. Por favor, verifique su archivo e intente de nuevo.");
             }
         }
@@ -132,19 +129,34 @@ namespace CertificadoLoteDecenalMVC.Models.Business.Services.Home
         /// <returns>Una colección de objetos <code>Registro</code>.</returns>
         private IEnumerable<Certificado> LeerArchivo(HttpPostedFileBase archivo, string tempDir)
         {
-            IEnumerable<Certificado> registros;
-            var deletableDir = Path.Combine(tempDir, Guid.NewGuid().ToString());
+            try {
+                IEnumerable<Certificado> registros;
+                var deletableDir = Path.Combine(tempDir, Guid.NewGuid().ToString());
 
-            Directory.CreateDirectory(deletableDir);
-            var tempFile = Path.Combine(deletableDir, archivo.FileName);
-            archivo.SaveAs(tempFile);
+                Directory.CreateDirectory(deletableDir);
+                var tempFile = Path.Combine(deletableDir, archivo.FileName);
+                archivo.SaveAs(tempFile);
 
-            using (IExcelIO lector = ObtenerLector(archivo.ContentType.ToLowerInvariant(), tempFile)) {
-                registros = lector.LeerArchivo();
+                using (IExcelIO lector = ObtenerLector(archivo.ContentType.ToLowerInvariant(), tempFile)) {
+                    registros = lector.LeerArchivo();
+                }
+
+                Directory.Delete(deletableDir, true);
+                return registros;
+            } catch (Exception e) {
+                var clase = GetType().FullName;
+                var metodo = MethodBase.GetCurrentMethod();
+
+                logger.ErrorLog(
+                    "Error en lectura de archivo de certificados Excel",
+                    clase,
+                    e.ToString(),
+                    metodo,
+                    archivo?.FileName,
+                    tempDir);
+
+                throw;
             }
-
-            Directory.Delete(deletableDir, true);
-            return registros;
         }
 
         /// <summary>
@@ -177,13 +189,13 @@ namespace CertificadoLoteDecenalMVC.Models.Business.Services.Home
 
             TimeSpan tiempoProcesamiento = MedirTiempoProcesamiento(regs => {
                 var agrupados = regs.ToLookup(registro => registro.Poliza);
-                return HomeDao.ObtenerNumerosLote(agrupados);
+                return new HomeDao(logger).ObtenerNumerosLote(agrupados);
             }, registros, out lote);
 
             var fechaTermino = fechaInicio.Add(tiempoProcesamiento);
             var nuevoNombreArchivo = $"{nombreArchivo}_LOTE_{fechaTermino.ToString("dd-MM-yyyy hh-mm-ss tt")}.xlsx";
 
-            using (var escritor = new EPPlusReaderWriter()) {
+            using (var escritor = new EPPlusReaderWriter(logger)) {
                 escritor.EscribirArchivo(
                     Path.Combine(lotesDir, nuevoNombreArchivo),
                     lote,
