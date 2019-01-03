@@ -61,19 +61,30 @@
                         </ul>
                     }
                     <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            @if (User.Identity.IsAuthenticated) {
-                                <a href="@Url.Action("Logout", "Account")">
-                                    <span class="fas fa-sign-out-alt"></span>
-                                    Cerrar Sesión
+                        @if (User.Identity.IsAuthenticated) {
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <span class="fas fa-user"></span>
+                                    @Session["NombreCompleto"] (@User.Identity.Name)
+                                    <span class="caret"></span>
                                 </a>
-                            } else {
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="@Url.Action("Logout", "Account")">
+                                            <span class="fas fa-sign-out-alt"></span>
+                                            Cerrar Sesión
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        } else {
+                            <li>
                                 <a href="@Url.Action("Login", "Account")">
                                     <span class="fas fa-sign-in-alt"></span>
                                     Iniciar Sesión
                                 </a>
-                            }
-                        </li>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>

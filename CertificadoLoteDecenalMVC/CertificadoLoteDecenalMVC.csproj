@@ -93,6 +93,7 @@
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -157,7 +158,9 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="CompositionRoot.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DescargarLotesController.cs" />
@@ -182,8 +185,12 @@
     <Compile Include="Models\Business\Messages\Message.cs" />
     <Compile Include="Models\DAL\DAO\DescargarLotesDao.cs" />
     <Compile Include="Models\DAL\DAO\HomeDao.cs" />
+    <Compile Include="Models\DAL\Entities\IdentityRole.cs" />
+    <Compile Include="Models\DAL\Entities\IdentityUser.cs" />
+    <Compile Include="Models\DAL\Entities\UserStore.cs" />
     <Compile Include="Models\DAL\ViewModels\AccountViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-dialog.css" />

@@ -3,6 +3,7 @@ using CertificadoLoteDecenalMVC.Models.Business.Logging;
 
 namespace CertificadoLoteDecenalMVC.Controllers
 {
+    [CustomAuthorize(Roles = "Internet_Desarrollo")]
     public class LogController : Controller
     {
         private ILogger logger;
