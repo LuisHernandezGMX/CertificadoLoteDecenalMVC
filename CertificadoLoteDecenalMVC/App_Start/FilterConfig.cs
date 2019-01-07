@@ -1,6 +1,8 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 
 namespace CertificadoLoteDecenalMVC
 {
@@ -10,6 +12,7 @@ namespace CertificadoLoteDecenalMVC
         {
             filters.Add(new HandleErrorAttribute());
             filters.Add(new CustomAuthorizeAttribute());
+            filters.Add(new RestaurarSesionAttribute());
         }
     }
 
@@ -29,6 +32,29 @@ namespace CertificadoLoteDecenalMVC
             } else {
                 base.HandleUnauthorizedRequest(filterContext);
             }
+        }
+    }
+
+    /// <summary>
+    /// Restaura los elementos almacenados previamente en la sesión si no están presentes.
+    /// </summary>
+    public class RestaurarSesionAttribute : ActionFilterAttribute
+    {
+        public override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            var http = filterContext.HttpContext;
+            var user = http.User;
+            var session = http.Session;
+
+            if (user.Identity.IsAuthenticated) {
+                if (session["NombreCompleto"] == null) {
+                    using (var userManager = http.GetOwinContext().Get<ApplicationUserManager>()) {
+                        session["NombreCompleto"] = userManager.FindByName(user.Identity.Name).Nombre;
+                    }
+                }
+            }
+
+            base.OnActionExecuting(filterContext);
         }
     }
 }
