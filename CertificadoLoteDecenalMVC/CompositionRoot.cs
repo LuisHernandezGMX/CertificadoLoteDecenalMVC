@@ -38,6 +38,8 @@ namespace CertificadoLoteDecenalMVC
             if (controllerType == typeof(LogController))
                 return new LogController(logger);
 
+            if (controllerType == typeof(AccountController))
+                return new AccountController(logger);
 
             return base.GetControllerInstance(requestContext, controllerType);
         }

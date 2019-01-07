@@ -1,0 +1,214 @@
+{
+  "Logs": [
+    {
+      "Id": "376575dd-21ef-4868-a422-d157ae534f03",
+      "Fecha": "2019-01-07T10:27:58.5810187-06:00",
+      "Descripcion": "Intento Fallido de Inicio de Sesión",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Controllers.AccountController",
+        "Metodo": {
+          "Nombre": "Login",
+          "Argumentos": [
+            {
+              "TipoDato": "CertificadoLoteDecenalMVC.Models.DAL.ViewModels.Account.LoginViewModel",
+              "Parametro": "model",
+              "Valor": "UserName = hernandl"
+            },
+            {
+              "TipoDato": "System.String",
+              "Parametro": "returnUrl",
+              "Valor": "NULL"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Mensaje": "Se intentó iniciar sesión desde el equipo ::1 (::1)",
+        "Tipo": 2
+      }
+    },
+    {
+      "Id": "21c27b91-3108-43e9-ad34-32b543b7e15d",
+      "Fecha": "2019-01-07T10:28:07.516089-06:00",
+      "Descripcion": "Inicio de Sesión",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Controllers.AccountController",
+        "Metodo": {
+          "Nombre": "Login",
+          "Argumentos": [
+            {
+              "TipoDato": "CertificadoLoteDecenalMVC.Models.DAL.ViewModels.Account.LoginViewModel",
+              "Parametro": "model",
+              "Valor": "VistaModelo válido"
+            },
+            {
+              "TipoDato": "System.String",
+              "Parametro": "returnUrl",
+              "Valor": "NULL"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Mensaje": "El usuario  ha iniciado sesión.",
+        "Tipo": 1
+      }
+    },
+    {
+      "Id": "93711980-476f-4289-9269-ff2a9f7831cd",
+      "Fecha": "2019-01-07T10:28:11.1019747-06:00",
+      "Descripcion": "Cierre de Sesión",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Controllers.AccountController",
+        "Metodo": {
+          "Nombre": "Logout",
+          "Argumentos": []
+        }
+      },
+      "Resultado": {
+        "Mensaje": "El usuario hernandl ha cerrado sesión.",
+        "Tipo": 1
+      }
+    },
+    {
+      "Id": "90d38651-ba66-458f-aaf3-5796c5edab79",
+      "Fecha": "2019-01-07T10:28:19.2591587-06:00",
+      "Descripcion": "Intento Fallido de Inicio de Sesión",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Controllers.AccountController",
+        "Metodo": {
+          "Nombre": "Login",
+          "Argumentos": [
+            {
+              "TipoDato": "CertificadoLoteDecenalMVC.Models.DAL.ViewModels.Account.LoginViewModel",
+              "Parametro": "model",
+              "Valor": "UserName = \\x3cscript src=http://www.example.com/malicious-code.js\\x3e\\x3c/script\\x3e"
+            },
+            {
+              "TipoDato": "System.String",
+              "Parametro": "returnUrl",
+              "Valor": "NULL"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Mensaje": "Se intentó iniciar sesión desde el equipo ::1 (::1)",
+        "Tipo": 2
+      }
+    },
+    {
+      "Id": "b6d823ba-e045-4871-904f-92a4526c0774",
+      "Fecha": "2019-01-07T10:28:30.3326395-06:00",
+      "Descripcion": "Inicio de Sesión",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Controllers.AccountController",
+        "Metodo": {
+          "Nombre": "Login",
+          "Argumentos": [
+            {
+              "TipoDato": "CertificadoLoteDecenalMVC.Models.DAL.ViewModels.Account.LoginViewModel",
+              "Parametro": "model",
+              "Valor": "VistaModelo válido"
+            },
+            {
+              "TipoDato": "System.String",
+              "Parametro": "returnUrl",
+              "Valor": "NULL"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Mensaje": "El usuario  ha iniciado sesión.",
+        "Tipo": 1
+      }
+    },
+    {
+      "Id": "12d1113f-eb54-4336-aa43-45bbbc7f58b7",
+      "Fecha": "2019-01-07T10:33:04.2680825-06:00",
+      "Descripcion": "Cierre de Sesión",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Controllers.AccountController",
+        "Metodo": {
+          "Nombre": "Logout",
+          "Argumentos": []
+        }
+      },
+      "Resultado": {
+        "Mensaje": "El usuario hernandl ha cerrado sesión.",
+        "Tipo": 1
+      }
+    },
+    {
+      "Id": "f230bbab-a1ff-41af-ba5a-7ac11d690554",
+      "Fecha": "2019-01-07T10:33:13.7069769-06:00",
+      "Descripcion": "Inicio de Sesión",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Controllers.AccountController",
+        "Metodo": {
+          "Nombre": "Login",
+          "Argumentos": [
+            {
+              "TipoDato": "CertificadoLoteDecenalMVC.Models.DAL.ViewModels.Account.LoginViewModel",
+              "Parametro": "model",
+              "Valor": "VistaModelo válido"
+            },
+            {
+              "TipoDato": "System.String",
+              "Parametro": "returnUrl",
+              "Valor": "NULL"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Mensaje": "El usuario hernandl ha iniciado sesión.",
+        "Tipo": 1
+      }
+    },
+    {
+      "Id": "fa909ef7-ffff-4556-bb42-993f6933f1ed",
+      "Fecha": "2019-01-07T10:33:55.2434716-06:00",
+      "Descripcion": "Cierre de Sesión",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Controllers.AccountController",
+        "Metodo": {
+          "Nombre": "Logout",
+          "Argumentos": []
+        }
+      },
+      "Resultado": {
+        "Mensaje": "El usuario hernandl ha cerrado sesión.",
+        "Tipo": 1
+      }
+    },
+    {
+      "Id": "f0eaae92-332b-437a-95c9-0696ba39bdd6",
+      "Fecha": "2019-01-07T10:34:03.2913976-06:00",
+      "Descripcion": "Inicio de Sesión",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Controllers.AccountController",
+        "Metodo": {
+          "Nombre": "Login",
+          "Argumentos": [
+            {
+              "TipoDato": "CertificadoLoteDecenalMVC.Models.DAL.ViewModels.Account.LoginViewModel",
+              "Parametro": "model",
+              "Valor": "VistaModelo válido"
+            },
+            {
+              "TipoDato": "System.String",
+              "Parametro": "returnUrl",
+              "Valor": "/Home/LayoutCertificados"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Mensaje": "El usuario hernandl ha iniciado sesión.",
+        "Tipo": 1
+      }
+    }
+  ]
+}

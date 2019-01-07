@@ -1,0 +1,52 @@
+{
+  "Logs": [
+    {
+      "Id": "c49e179c-dff6-439d-9e01-d0fe40dc62c7",
+      "Fecha": "2019-01-04T14:18:38.5690676-06:00",
+      "Descripcion": "Intento Fallido de Inicio de Sesión",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Controllers.AccountController",
+        "Metodo": {
+          "Nombre": "MoveNext",
+          "Argumentos": []
+        }
+      },
+      "Resultado": {
+        "Mensaje": "Se intentó iniciar sesión desde el equipo ::1 (::1).",
+        "Tipo": 2
+      }
+    },
+    {
+      "Id": "027c239d-2855-4a81-9b53-dc161fde8fb0",
+      "Fecha": "2019-01-04T14:18:50.2310083-06:00",
+      "Descripcion": "Inicio de Sesión",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Controllers.AccountController",
+        "Metodo": {
+          "Nombre": "MoveNext",
+          "Argumentos": []
+        }
+      },
+      "Resultado": {
+        "Mensaje": "El usuario  ha iniciado sesión.",
+        "Tipo": 1
+      }
+    },
+    {
+      "Id": "61efacbd-dd62-4b41-9816-196cea27dc45",
+      "Fecha": "2019-01-04T14:30:48.6247297-06:00",
+      "Descripcion": "Cierre de Sesión",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Controllers.AccountController",
+        "Metodo": {
+          "Nombre": "Logout",
+          "Argumentos": []
+        }
+      },
+      "Resultado": {
+        "Mensaje": "El usuario hernandl ha cerrado sesión.",
+        "Tipo": 1
+      }
+    }
+  ]
+}

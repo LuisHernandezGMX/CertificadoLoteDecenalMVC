@@ -60,6 +60,7 @@ var DetailsUtils = (function () {
         BootstrapDialog.show({
             title: '<span class="fas fa-code"></span> Ubicación del Evento',
             type: BootstrapDialog.TYPE_PRIMARY,
+            size: BootstrapDialog.SIZE_WIDE,
             message: html,
             buttons: [{
                 label: "Cerrar",
