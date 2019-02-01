@@ -1,0 +1,117 @@
+{
+  "Logs": [
+    {
+      "Id": "850a00db-8a90-46a0-b612-50e1c0b0da7c",
+      "Fecha": "2019-02-01T08:00:50.4273711-06:00",
+      "Descripcion": "Inicio de Sesión",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Controllers.AccountController",
+        "Metodo": {
+          "Nombre": "Login",
+          "Argumentos": [
+            {
+              "TipoDato": "CertificadoLoteDecenalMVC.Models.DAL.ViewModels.Account.LoginViewModel",
+              "Parametro": "model",
+              "Valor": "VistaModelo válido"
+            },
+            {
+              "TipoDato": "System.String",
+              "Parametro": "returnUrl",
+              "Valor": "/Home/LayoutCertificados"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Mensaje": "El usuario hernandl ha iniciado sesión.",
+        "Tipo": 1
+      }
+    },
+    {
+      "Id": "d981858d-7952-4550-a01f-e2d0f3863c87",
+      "Fecha": "2019-02-01T08:06:27.1602208-06:00",
+      "Descripcion": "Archivo de certificados Excel leído con éxito.",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerArchivo",
+          "Argumentos": [
+            {
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Parametro": "archivo",
+              "Valor": "CertInfonavit26-11-18al06-01-19-ENE2019-Carga.xls"
+            },
+            {
+              "TipoDato": "System.String",
+              "Parametro": "tempDir",
+              "Valor": "C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Mensaje": "Ejecución realizada con éxito.",
+        "Tipo": 1
+      }
+    },
+    {
+      "Id": "90223a6d-e355-44fa-879d-357890788e3b",
+      "Fecha": "2019-02-01T09:07:43.8723237-06:00",
+      "Descripcion": "Archivo de certificados Excel leído con éxito.",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerArchivo",
+          "Argumentos": [
+            {
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Parametro": "archivo",
+              "Valor": "CertInfonavit26-11-18al06-01-19-ENE2019-Carga.xls"
+            },
+            {
+              "TipoDato": "System.String",
+              "Parametro": "tempDir",
+              "Valor": "C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Mensaje": "Ejecución realizada con éxito.",
+        "Tipo": 1
+      }
+    },
+    {
+      "Id": "3acbbf39-1131-464e-b921-b43b2295eaa7",
+      "Fecha": "2019-02-01T09:13:39.8210087-06:00",
+      "Descripcion": "Certificados de Excel procesados con éxito",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerYProcesarRegistros",
+          "Argumentos": [
+            {
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Parametro": "archivo",
+              "Valor": "CertInfonavit26-11-18al06-01-19-ENE2019-Carga.xls"
+            },
+            {
+              "TipoDato": "System.String",
+              "Parametro": "tempDir",
+              "Valor": "C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            },
+            {
+              "TipoDato": "System.String",
+              "Parametro": "lotesDir",
+              "Valor": "C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\LotesGenerados"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Mensaje": "Los certificados se procesaron con éxito y su respectivo lote ha sido generado. => CertInfonavit26-11-18al06-01-19-ENE2019-Carga_LOTE_01-02-2019 09-13-39 a. m..xlsx",
+        "Tipo": 0
+      }
+    }
+  ]
+}

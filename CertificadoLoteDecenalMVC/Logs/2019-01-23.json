@@ -1,0 +1,198 @@
+{
+  "Logs": [
+    {
+      "Id": "7a91a82c-3b4d-4c1d-b069-66714898f830",
+      "Fecha": "2019-01-23T12:32:41.1148717-06:00",
+      "Descripcion": "Inicio de Sesión",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Controllers.AccountController",
+        "Metodo": {
+          "Nombre": "Login",
+          "Argumentos": [
+            {
+              "TipoDato": "CertificadoLoteDecenalMVC.Models.DAL.ViewModels.Account.LoginViewModel",
+              "Parametro": "model",
+              "Valor": "VistaModelo válido"
+            },
+            {
+              "TipoDato": "System.String",
+              "Parametro": "returnUrl",
+              "Valor": "NULL"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Mensaje": "El usuario hernandl ha iniciado sesión.",
+        "Tipo": 1
+      }
+    },
+    {
+      "Id": "44165d8c-3754-4fec-8e44-1190fe9d8bed",
+      "Fecha": "2019-01-23T12:34:02.4657991-06:00",
+      "Descripcion": "Error en lectura de archivo de certificados Excel",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerArchivo",
+          "Argumentos": [
+            {
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Parametro": "archivo",
+              "Valor": "Layout Fovissste 27 Corte(Prepago-DIC18).xls"
+            },
+            {
+              "TipoDato": "System.String",
+              "Parametro": "tempDir",
+              "Valor": "C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Mensaje": "System.InvalidCastException: La conversión especificada no es válida.\r\n   en CertificadoLoteDecenalMVC.Models.Business.Excel.OleDbReader.ParseFila(Object[] fila) en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Excel\\OleDbReader.cs:línea 152\r\n   en CertificadoLoteDecenalMVC.Models.Business.Excel.OleDbReader.<LeerArchivo>b__2_0(DataRow row) en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Excel\\OleDbReader.cs:línea 54\r\n   en System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()\r\n   en System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)\r\n   en System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)\r\n   en CertificadoLoteDecenalMVC.Models.Business.Excel.OleDbReader.LeerArchivo() en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Excel\\OleDbReader.cs:línea 51\r\n   en CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService.LeerArchivo(HttpPostedFileBase archivo, String tempDir) en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Services\\HomeService.cs:línea 141",
+        "Tipo": 3
+      }
+    },
+    {
+      "Id": "aac3e717-f425-482b-80dc-85010ac43af1",
+      "Fecha": "2019-01-23T12:35:46.4191453-06:00",
+      "Descripcion": "Error en lectura de archivo de certificados Excel",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerArchivo",
+          "Argumentos": [
+            {
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Parametro": "archivo",
+              "Valor": "Layout Fovissste 27 Corte(Prepago-DIC18).xls"
+            },
+            {
+              "TipoDato": "System.String",
+              "Parametro": "tempDir",
+              "Valor": "C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Mensaje": "System.InvalidCastException: La conversión especificada no es válida.\r\n   en CertificadoLoteDecenalMVC.Models.Business.Excel.OleDbReader.ParseFila(Object[] fila) en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Excel\\OleDbReader.cs:línea 152\r\n   en CertificadoLoteDecenalMVC.Models.Business.Excel.OleDbReader.<LeerArchivo>b__2_0(DataRow row) en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Excel\\OleDbReader.cs:línea 54\r\n   en System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()\r\n   en System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)\r\n   en System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)\r\n   en CertificadoLoteDecenalMVC.Models.Business.Excel.OleDbReader.LeerArchivo() en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Excel\\OleDbReader.cs:línea 51\r\n   en CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService.LeerArchivo(HttpPostedFileBase archivo, String tempDir) en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Services\\HomeService.cs:línea 141",
+        "Tipo": 3
+      }
+    },
+    {
+      "Id": "7c7d80c7-cb3f-4856-b5e5-8126d252bf5c",
+      "Fecha": "2019-01-23T12:38:20.3743512-06:00",
+      "Descripcion": "Error en lectura de archivo de certificados Excel",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerArchivo",
+          "Argumentos": [
+            {
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Parametro": "archivo",
+              "Valor": "Layout Fovissste 27 Corte(Prepago-DIC18).xls"
+            },
+            {
+              "TipoDato": "System.String",
+              "Parametro": "tempDir",
+              "Valor": "C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Mensaje": "System.InvalidCastException: La conversión especificada no es válida.\r\n   en CertificadoLoteDecenalMVC.Models.Business.Excel.OleDbReader.ParseFila(Object[] fila) en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Excel\\OleDbReader.cs:línea 152\r\n   en CertificadoLoteDecenalMVC.Models.Business.Excel.OleDbReader.<LeerArchivo>b__2_0(DataRow row) en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Excel\\OleDbReader.cs:línea 54\r\n   en System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()\r\n   en System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)\r\n   en System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)\r\n   en CertificadoLoteDecenalMVC.Models.Business.Excel.OleDbReader.LeerArchivo() en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Excel\\OleDbReader.cs:línea 51\r\n   en CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService.LeerArchivo(HttpPostedFileBase archivo, String tempDir) en C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\Models\\Business\\Services\\HomeService.cs:línea 141",
+        "Tipo": 3
+      }
+    },
+    {
+      "Id": "f73b8b4d-9074-4628-bd90-d4a6b8907382",
+      "Fecha": "2019-01-23T12:39:07.7071144-06:00",
+      "Descripcion": "Archivo de certificados Excel leído con éxito.",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerArchivo",
+          "Argumentos": [
+            {
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Parametro": "archivo",
+              "Valor": "Layout Fovissste 27 Corte(Prepago-DIC18).xls"
+            },
+            {
+              "TipoDato": "System.String",
+              "Parametro": "tempDir",
+              "Valor": "C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Mensaje": "Ejecución realizada con éxito.",
+        "Tipo": 1
+      }
+    },
+    {
+      "Id": "7459b8e9-d591-4d62-8302-527541126af7",
+      "Fecha": "2019-01-23T12:39:40.7735159-06:00",
+      "Descripcion": "Archivo de certificados Excel leído con éxito.",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerArchivo",
+          "Argumentos": [
+            {
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Parametro": "archivo",
+              "Valor": "Layout Fovissste 27 Corte(Prepago-DIC18).xls"
+            },
+            {
+              "TipoDato": "System.String",
+              "Parametro": "tempDir",
+              "Valor": "C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Mensaje": "Ejecución realizada con éxito.",
+        "Tipo": 1
+      }
+    },
+    {
+      "Id": "ec85c504-99b8-4038-bf44-83e8c459c96a",
+      "Fecha": "2019-01-23T12:40:27.6490978-06:00",
+      "Descripcion": "Certificados de Excel procesados con éxito",
+      "Ubicacion": {
+        "Clase": "CertificadoLoteDecenalMVC.Models.Business.Services.Home.HomeService",
+        "Metodo": {
+          "Nombre": "LeerYProcesarRegistros",
+          "Argumentos": [
+            {
+              "TipoDato": "System.Web.HttpPostedFileBase",
+              "Parametro": "archivo",
+              "Valor": "Layout Fovissste 27 Corte(Prepago-DIC18).xls"
+            },
+            {
+              "TipoDato": "System.String",
+              "Parametro": "tempDir",
+              "Valor": "C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\TEMP"
+            },
+            {
+              "TipoDato": "System.String",
+              "Parametro": "lotesDir",
+              "Valor": "C:\\Users\\hernandl\\Documents\\Visual Studio 2015\\Projects\\CertificadoLoteDecenalMVC\\CertificadoLoteDecenalMVC\\LotesGenerados"
+            }
+          ]
+        }
+      },
+      "Resultado": {
+        "Mensaje": "Los certificados se procesaron con éxito y su respectivo lote ha sido generado. => Layout Fovissste 27 Corte(Prepago-DIC18)_LOTE_23-01-2019 12-40-27 p. m..xlsx",
+        "Tipo": 0
+      }
+    }
+  ]
+}
